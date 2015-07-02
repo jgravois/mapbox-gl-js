@@ -32,7 +32,11 @@ function LatLng(lat, lng) {
  * wrapped.lng; // = -160
  */
 LatLng.prototype.wrap = function () {
-    return new LatLng(this.lat, wrap(this.lng, -180, 180));
+    var lng = wrap(this.lng, -180, 180);
+    if (lng === -180) {
+        lng = 180;
+    }
+    return new LatLng(this.lat, lng);
 };
 
 /**

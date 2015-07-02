@@ -64,7 +64,11 @@ Transform.prototype = {
         return -this.angle / Math.PI * 180;
     },
     set bearing(bearing) {
-        this.angle = -wrap(bearing, -180, 180) * Math.PI / 180;
+        bearing = wrap(bearing, -180, 180);
+        if (bearing === -180) {
+            bearing = 180;
+        }
+        this.angle = -bearing * Math.PI / 180;
     },
 
     get pitch() {

@@ -79,15 +79,15 @@ exports.clamp = function (n, min, max) {
 
 /*
  * constrain n to the given range via modular arithmetic
- * @param {number} n
- * @param {number} min
- * @param {number} max
+ * @param {number} n value
+ * @param {number} min the minimum value to be returned, inclusive
+ * @param {number} max the maximum value to be returned, exclusive
  * @returns {number} constrained number
  * @private
  */
 exports.wrap = function (n, min, max) {
     var d = max - min;
-    return n === max ? n : ((n - min) % d + d) % d + min;
+    return ((n - min) % d + d) % d + min;
 };
 
 /*

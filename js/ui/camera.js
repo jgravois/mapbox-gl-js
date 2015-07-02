@@ -650,6 +650,9 @@ util.extend(Camera.prototype, /** @lends Map.prototype */{
     // convert bearing so that it's numerically close to the current one so that it interpolates properly
     _normalizeBearing: function(bearing, currentBearing) {
         bearing = util.wrap(bearing, -180, 180);
+        if (bearing === -180) {
+            bearing = 180;
+        }
         var diff = Math.abs(bearing - currentBearing);
         if (Math.abs(bearing - 360 - currentBearing) < diff) bearing -= 360;
         if (Math.abs(bearing + 360 - currentBearing) < diff) bearing += 360;
