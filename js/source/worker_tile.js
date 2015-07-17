@@ -18,7 +18,7 @@ function WorkerTile(params) {
     this.collisionDebug = params.collisionDebug;
 }
 
-WorkerTile.prototype.parse = function(data, layers, actor, callback) {
+WorkerTile.prototype.parse = function(data, layers, actor, callback, dz, xPos, yPos) {
 
     this.status = 'parsing';
 
@@ -75,16 +75,24 @@ WorkerTile.prototype.parse = function(data, layers, actor, callback) {
         for (sourceLayerId in bucketsBySourceLayer) {
             layer = data.layers[sourceLayerId];
             if (layer) {
-                sortLayerIntoBuckets(layer, bucketsBySourceLayer[sourceLayerId]);
+                if (layer.extent) extent = layer.extent;
+                sortLayerIntoBuckets(layer, bucketsBySourceLayer[sourceLayerId], dz, xPos, yPos);
             }
+            if (!layer) continue;
         }
     } else { // geojson
         sortLayerIntoBuckets(data, bucketsById);
     }
 
-    function sortLayerIntoBuckets(layer, buckets) {
+    function sortLayerIntoBuckets(layer, buckets, dz, xPos, yPos) {
         for (var i = 0; i < layer.length; i++) {
             var feature = layer.feature(i);
+
+            //MOB
+            feature.dz = dz;
+            feature.xPos = xPos;
+            feature.yPos = yPos;
+
             for (var id in buckets) {
                 if (buckets[id].filter(feature))
                     buckets[id].features.push(feature);
