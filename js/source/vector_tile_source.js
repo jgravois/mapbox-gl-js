@@ -4,6 +4,7 @@ var util = require('../util/util');
 var Evented = require('../util/evented');
 var Source = require('./source');
 var normalizeURL = require('../util/mapbox').normalizeTileURL;
+var TileCoord = require('./tile_coord');
 
 module.exports = VectorTileSource;
 
@@ -68,7 +69,7 @@ VectorTileSource.prototype = util.inherit(Evented, {
 
         // request the tile parentID if it exists
         if (tile.parentId) {
-            params.url = tile.coord.fromID(tile.parentID).url(this.tiles, this.maxzoom);
+            params.url = TileCoord.fromID(tile.parentId).url(this.tiles, this.maxzoom);
         }
 
         if (tile.workerID) {
