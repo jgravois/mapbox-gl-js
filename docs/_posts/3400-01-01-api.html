@@ -1,0 +1,6283 @@
+---
+layout: docs
+category: api
+title: Mapbox GL JS API
+navtitle: API
+permalink: /api
+navigation:
+  - title: AnimationOptions
+    url: /api
+    id: animationoptions
+    subnav:
+  - title: Attribution
+    url: /api
+    id: attribution
+    subnav:
+  - title: BufferType
+    url: /api
+    id: buffertype
+    subnav:
+  - title: CameraOptions
+    url: /api
+    id: cameraoptions
+    subnav:
+  - title: CAPACITY_ALIGNMENT
+    url: /api
+    id: capacity-alignment
+    subnav:
+  - title: CAPACITY_DEFAULT
+    url: /api
+    id: capacity-default
+    subnav:
+  - title: Control
+    url: /api
+    id: control
+    subnav:
+      - title: '#addTo'
+        url: /api
+        id: control/addto
+      - title: '#remove'
+        url: /api
+        id: control/remove
+  - title: ELEMENT_ATTRIBUTE_TYPE
+    url: /api
+    id: element-attribute-type
+    subnav:
+  - title: Evented
+    url: /api
+    id: evented
+    subnav:
+      - title: .fire
+        url: /api
+        id: evented/fire
+      - title: .listens
+        url: /api
+        id: evented/listens
+      - title: .off
+        url: /api
+        id: evented/off
+      - title: .on
+        url: /api
+        id: evented/on
+      - title: .once
+        url: /api
+        id: evented/once
+  - title: GeoJSONSource
+    url: /api
+    id: geojsonsource
+    subnav:
+      - title: '#setData'
+        url: /api
+        id: geojsonsource/setdata
+  - title: ImageSource
+    url: /api
+    id: imagesource
+    subnav:
+  - title: Keyboard
+    url: /api
+    id: keyboard
+    subnav:
+  - title: LngLat
+    url: /api
+    id: lnglat
+    subnav:
+      - title: .convert
+        url: /api
+        id: lnglat/convert
+      - title: '#toArray'
+        url: /api
+        id: lnglat/toarray
+      - title: '#toString'
+        url: /api
+        id: lnglat/tostring
+      - title: '#wrap'
+        url: /api
+        id: lnglat/wrap
+  - title: LngLatBounds
+    url: /api
+    id: lnglatbounds
+    subnav:
+      - title: .convert
+        url: /api
+        id: lnglatbounds/convert
+      - title: '#extend'
+        url: /api
+        id: lnglatbounds/extend
+      - title: '#getCenter'
+        url: /api
+        id: lnglatbounds/getcenter
+      - title: '#getEast'
+        url: /api
+        id: lnglatbounds/geteast
+      - title: '#getNorth'
+        url: /api
+        id: lnglatbounds/getnorth
+      - title: '#getNorthEast'
+        url: /api
+        id: lnglatbounds/getnortheast
+      - title: '#getNorthWest'
+        url: /api
+        id: lnglatbounds/getnorthwest
+      - title: '#getSouth'
+        url: /api
+        id: lnglatbounds/getsouth
+      - title: '#getSouthEast'
+        url: /api
+        id: lnglatbounds/getsoutheast
+      - title: '#getSouthWest'
+        url: /api
+        id: lnglatbounds/getsouthwest
+      - title: '#getWest'
+        url: /api
+        id: lnglatbounds/getwest
+      - title: '#toArray'
+        url: /api
+        id: lnglatbounds/toarray
+      - title: '#toString'
+        url: /api
+        id: lnglatbounds/tostring
+  - title: Map
+    url: /api
+    id: map
+    subnav:
+      - title: '#addClass'
+        url: /api
+        id: map/addclass
+      - title: '#addLayer'
+        url: /api
+        id: map/addlayer
+      - title: '#addSource'
+        url: /api
+        id: map/addsource
+      - title: '#batch'
+        url: /api
+        id: map/batch
+      - title: '#collisionDebug'
+        url: /api
+        id: map/collisiondebug
+      - title: '#debug'
+        url: /api
+        id: map/debug
+      - title: '#easeTo'
+        url: /api
+        id: map/easeto
+      - title: '#featuresAt'
+        url: /api
+        id: map/featuresat
+      - title: '#featuresIn'
+        url: /api
+        id: map/featuresin
+      - title: '#fitBounds'
+        url: /api
+        id: map/fitbounds
+      - title: '#flyTo'
+        url: /api
+        id: map/flyto
+      - title: '#getBearing'
+        url: /api
+        id: map/getbearing
+      - title: '#getBounds'
+        url: /api
+        id: map/getbounds
+      - title: '#getCanvas'
+        url: /api
+        id: map/getcanvas
+      - title: '#getCanvasContainer'
+        url: /api
+        id: map/getcanvascontainer
+      - title: '#getCenter'
+        url: /api
+        id: map/getcenter
+      - title: '#getClasses'
+        url: /api
+        id: map/getclasses
+      - title: '#getContainer'
+        url: /api
+        id: map/getcontainer
+      - title: '#getFilter'
+        url: /api
+        id: map/getfilter
+      - title: '#getLayer'
+        url: /api
+        id: map/getlayer
+      - title: '#getLayoutProperty'
+        url: /api
+        id: map/getlayoutproperty
+      - title: '#getPaintProperty'
+        url: /api
+        id: map/getpaintproperty
+      - title: '#getPitch'
+        url: /api
+        id: map/getpitch
+      - title: '#getSource'
+        url: /api
+        id: map/getsource
+      - title: '#getZoom'
+        url: /api
+        id: map/getzoom
+      - title: '#hasClass'
+        url: /api
+        id: map/hasclass
+      - title: '#jumpTo'
+        url: /api
+        id: map/jumpto
+      - title: '#loaded'
+        url: /api
+        id: map/loaded
+      - title: '#onError'
+        url: /api
+        id: map/onerror
+      - title: '#panBy'
+        url: /api
+        id: map/panby
+      - title: '#panTo'
+        url: /api
+        id: map/panto
+      - title: '#project'
+        url: /api
+        id: map/project
+      - title: '#remove'
+        url: /api
+        id: map/remove
+      - title: '#removeClass'
+        url: /api
+        id: map/removeclass
+      - title: '#removeLayer'
+        url: /api
+        id: map/removelayer
+      - title: '#removeSource'
+        url: /api
+        id: map/removesource
+      - title: '#render'
+        url: /api
+        id: map/render
+      - title: '#repaint'
+        url: /api
+        id: map/repaint
+      - title: '#resetNorth'
+        url: /api
+        id: map/resetnorth
+      - title: '#resize'
+        url: /api
+        id: map/resize
+      - title: '#rotateTo'
+        url: /api
+        id: map/rotateto
+      - title: '#setBearing'
+        url: /api
+        id: map/setbearing
+      - title: '#setCenter'
+        url: /api
+        id: map/setcenter
+      - title: '#setClasses'
+        url: /api
+        id: map/setclasses
+      - title: '#setFilter'
+        url: /api
+        id: map/setfilter
+      - title: '#setLayerZoomRange'
+        url: /api
+        id: map/setlayerzoomrange
+      - title: '#setLayoutProperty'
+        url: /api
+        id: map/setlayoutproperty
+      - title: '#setPaintProperty'
+        url: /api
+        id: map/setpaintproperty
+      - title: '#setPitch'
+        url: /api
+        id: map/setpitch
+      - title: '#setStyle'
+        url: /api
+        id: map/setstyle
+      - title: '#setZoom'
+        url: /api
+        id: map/setzoom
+      - title: '#snapToNorth'
+        url: /api
+        id: map/snaptonorth
+      - title: '#stop'
+        url: /api
+        id: map/stop
+      - title: '#unproject'
+        url: /api
+        id: map/unproject
+      - title: '#update'
+        url: /api
+        id: map/update
+      - title: '#zoomIn'
+        url: /api
+        id: map/zoomin
+      - title: '#zoomOut'
+        url: /api
+        id: map/zoomout
+      - title: '#zoomTo'
+        url: /api
+        id: map/zoomto
+      - title: ⓔ click
+        url: /api
+        id: map/click
+      - title: ⓔ contextmenu
+        url: /api
+        id: map/contextmenu
+      - title: ⓔ dblclick
+        url: /api
+        id: map/dblclick
+      - title: ⓔ load
+        url: /api
+        id: map/load
+      - title: ⓔ mousemove
+        url: /api
+        id: map/mousemove
+      - title: ⓔ move
+        url: /api
+        id: map/move
+      - title: ⓔ moveend
+        url: /api
+        id: map/moveend
+      - title: ⓔ movestart
+        url: /api
+        id: map/movestart
+      - title: ⓔ webglcontextlost
+        url: /api
+        id: map/webglcontextlost
+      - title: ⓔ webglcontextrestored
+        url: /api
+        id: map/webglcontextrestored
+  - title: mapboxgl
+    url: /api
+    id: mapboxgl
+    subnav:
+      - title: .supported
+        url: /api
+        id: mapboxgl/supported
+  - title: Navigation
+    url: /api
+    id: navigation
+    subnav:
+  - title: Popup
+    url: /api
+    id: popup
+    subnav:
+      - title: '#addTo'
+        url: /api
+        id: popup/addto
+      - title: '#getLngLat'
+        url: /api
+        id: popup/getlnglat
+      - title: '#remove'
+        url: /api
+        id: popup/remove
+      - title: '#setHTML'
+        url: /api
+        id: popup/sethtml
+      - title: '#setLngLat'
+        url: /api
+        id: popup/setlnglat
+      - title: '#setText'
+        url: /api
+        id: popup/settext
+  - title: StyleOptions
+    url: /api
+    id: styleoptions
+    subnav:
+  - title: VERTEX_ATTRIBUTE_ALIGNMENT
+    url: /api
+    id: vertex-attribute-alignment
+    subnav:
+  - title: VideoSource
+    url: /api
+    id: videosource
+    subnav:
+      - title: '#getVideo'
+        url: /api
+        id: videosource/getvideo
+---
+<section id='animationoptions' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L35-L35'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='animationoptions' class='space'>
+    <span>AnimationOptions</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Options common to map movement methods that involve animation, such as Map#panBy and
+Map#easeTo, controlling the duration of the animation and easing function. All properties
+are optional.</p>
+
+  </div>
+
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>property</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>duration</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td><p>Number in milliseconds</p>
+</td>
+        </tr>
+        <tr>
+          <td>easing</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>offset</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>
+          </td>
+          <td><p>point, origin of movement relative to map center</p>
+</td>
+        </tr>
+        <tr>
+          <td>animate</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>
+          </td>
+          <td><p>When set to false, no animation happens</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+</section>
+<section id='attribution' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/control/attribution.js#L15-L15'>
+        <code class='icon floppy pad0'>js/ui/control/attribution.js</code>
+      </a>
+    </div>
+  <h2 id='attribution' class='space'>
+    <span>Attribution</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Creates an attribution control</p>
+
+  </div>
+
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+map.addControl(<span class="hljs-keyword">new</span> mapboxgl.Attribution());
+</pre>
+</div>
+
+
+
+
+</section>
+<section id='buffertype' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/data/buffer.js#L202-L205'>
+        <code class='icon floppy pad0'>js/data/buffer.js</code>
+      </a>
+    </div>
+  <h2 id='buffertype' class='space'>
+    <span>BufferType</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+<section id='cameraoptions' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L35-L35'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='cameraoptions' class='space'>
+    <span>CameraOptions</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Options common to Map#jumpTo, Map#easeTo, and Map#flyTo, controlling the destination
+location, zoom level, bearing and pitch. All properties are options; unspecified
+options will default to the current value for that property.</p>
+
+  </div>
+
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>property</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>center</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td><p>Map center</p>
+</td>
+        </tr>
+        <tr>
+          <td>zoom</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td><p>Map zoom level</p>
+</td>
+        </tr>
+        <tr>
+          <td>bearing</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td><p>Map rotation bearing in degrees counter-clockwise from north</p>
+</td>
+        </tr>
+        <tr>
+          <td>pitch</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td><p>Map angle in degrees at which the camera is looking at the ground</p>
+</td>
+        </tr>
+        <tr>
+          <td>around</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td><p>If zooming, the zoom center (defaults to map center)</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+</section>
+<section id='capacity-alignment' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/data/buffer.js#L242-L242'>
+        <code class='icon floppy pad0'>js/data/buffer.js</code>
+      </a>
+    </div>
+  <h2 id='capacity-alignment' class='space'>
+    <span>CAPACITY_ALIGNMENT</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>WebGL performs best if buffer sizes are aligned to 2 byte boundaries.</p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+<section id='capacity-default' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/data/buffer.js#L234-L234'>
+        <code class='icon floppy pad0'>js/data/buffer.js</code>
+      </a>
+    </div>
+  <h2 id='capacity-default' class='space'>
+    <span>CAPACITY_DEFAULT</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+<section id='control' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/control/control.js#L10-L10'>
+        <code class='icon floppy pad0'>js/ui/control/control.js</code>
+      </a>
+    </div>
+  <h2 id='control' class='space'>
+    <span>Control</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>A base class for map-related interface elements.</p>
+
+  </div>
+
+
+
+
+
+
+
+      <div>
+<section id='control/addto' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/control/control.js#L21-L36'>
+        <code class='icon floppy pad0'>js/ui/control/control.js</code>
+      </a>
+    </div>
+  <h2 id='control/addto' class='space'>
+    <span>addTo</span>
+    <span class='quiet'>(map)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Add this control to the map, returning the control itself
+for chaining. This will insert the control's DOM element into
+the map's DOM element if the control has a <code>position</code> specified.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>map</td>
+          <td>
+            <code><a href="#map">Map</a></code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#control">Control</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='control/remove' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/control/control.js#L43-L48'>
+        <code class='icon floppy pad0'>js/ui/control/control.js</code>
+      </a>
+    </div>
+  <h2 id='control/remove' class='space'>
+    <span>remove</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Remove this control from the map it has been added to.</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#control">Control</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+
+
+</section>
+<section id='element-attribute-type' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/data/buffer.js#L227-L227'>
+        <code class='icon floppy pad0'>js/data/buffer.js</code>
+      </a>
+    </div>
+  <h2 id='element-attribute-type' class='space'>
+    <span>ELEMENT_ATTRIBUTE_TYPE</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>An <code>BufferType.ELEMENT</code> buffer holds indicies of a corresponding <code>BufferType.VERTEX</code> buffer.
+These indicies are stored in the <code>BufferType.ELEMENT</code> buffer as <code>UNSIGNED_SHORT</code>s.</p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+<section id='evented' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/util/evented.js#L9-L101'>
+        <code class='icon floppy pad0'>js/util/evented.js</code>
+      </a>
+    </div>
+  <h2 id='evented' class='space'>
+    <span>Evented</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Methods mixed in to other classes for event capabilities.</p>
+
+  </div>
+
+
+
+
+
+
+      <div>
+<section id='evented/fire' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/util/evented.js#L77-L91'>
+        <code class='icon floppy pad0'>js/util/evented.js</code>
+      </a>
+    </div>
+  <h2 id='evented/fire' class='space'>
+    <span>fire</span>
+    <span class='quiet'>(type, [data])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Fire event of a given string type with the given data object</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>type</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>Event type</p>
+</td>
+        </tr>
+        <tr>
+          <td>data</td>
+          <td>
+            <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>]</code>
+          </td>
+          <td><p>Optional data passed down to the event object</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='evented/listens' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/util/evented.js#L98-L100'>
+        <code class='icon floppy pad0'>js/util/evented.js</code>
+      </a>
+    </div>
+  <h2 id='evented/listens' class='space'>
+    <span>listens</span>
+    <span class='quiet'>(type)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Check if an event is registered to a type</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>type</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>Event type</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>true</code> if there is at least one registered listener for events of type <code>type</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='evented/off' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/util/evented.js#L31-L53'>
+        <code class='icon floppy pad0'>js/util/evented.js</code>
+      </a>
+    </div>
+  <h2 id='evented/off' class='space'>
+    <span>off</span>
+    <span class='quiet'>([type], [listener])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Remove a event listener</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>type</td>
+          <td>
+            <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>]</code>
+          </td>
+          <td><p>Event type. If none is specified, remove all listeners</p>
+</td>
+        </tr>
+        <tr>
+          <td>listener</td>
+          <td>
+            <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>]</code>
+          </td>
+          <td><p>Function to be called when the event is fired. If none is specified all listeners are removed</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='evented/on' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/util/evented.js#L17-L23'>
+        <code class='icon floppy pad0'>js/util/evented.js</code>
+      </a>
+    </div>
+  <h2 id='evented/on' class='space'>
+    <span>on</span>
+    <span class='quiet'>(type, listener)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Subscribe to a specified event with a listener function the latter gets the data object that was passed to <code>fire</code> and additionally <code>target</code> and <code>type</code> properties</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>type</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>Event type</p>
+</td>
+        </tr>
+        <tr>
+          <td>listener</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>
+          </td>
+          <td><p>Function to be called when the event is fired</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='evented/once' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/util/evented.js#L61-L68'>
+        <code class='icon floppy pad0'>js/util/evented.js</code>
+      </a>
+    </div>
+  <h2 id='evented/once' class='space'>
+    <span>once</span>
+    <span class='quiet'>(type, listener)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Call a function once when an event has fired</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>type</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>Event type.</p>
+</td>
+        </tr>
+        <tr>
+          <td>listener</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>
+          </td>
+          <td><p>Function to be called once when the event is fired</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+</section>
+      </div>
+
+
+
+</section>
+<section id='geojsonsource' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/source/geojson_source.js#L38-L61'>
+        <code class='icon floppy pad0'>js/source/geojson_source.js</code>
+      </a>
+    </div>
+  <h2 id='geojsonsource' class='space'>
+    <span>GeoJSONSource</span>
+    <span class='quiet'>([options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Create a GeoJSON data source instance given an options object</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+          <tr>
+            <td>options.data</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+            </td>
+            <td><p>A GeoJSON data object or URL to it. The latter is preferable in case of large GeoJSON files.</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.maxzoom</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+              (default <code>14</code>)
+            </td>
+            <td><p>Maximum zoom to preserve detail at.</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.buffer</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+            </td>
+            <td><p>Tile buffer on each side.</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.tolerance</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+            </td>
+            <td><p>Simplification tolerance (higher means simpler).</p>
+</td>
+          </tr>
+    </table>
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> sourceObj = <span class="hljs-keyword">new</span> mapboxgl.GeoJSONSource({
+   data: {
+       <span class="hljs-string">"type"</span>: <span class="hljs-string">"FeatureCollection"</span>,
+       <span class="hljs-string">"features"</span>: [{
+           <span class="hljs-string">"type"</span>: <span class="hljs-string">"Feature"</span>,
+           <span class="hljs-string">"geometry"</span>: {
+               <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
+               <span class="hljs-string">"coordinates"</span>: [
+                   -<span class="hljs-number">76.53063297271729</span>,
+                   <span class="hljs-number">39.18174077994108</span>
+               ]
+           }
+       }]
+   }
+});
+map.addSource(<span class="hljs-string">'some id'</span>, sourceObj); <span class="hljs-comment">// add</span>
+map.removeSource(<span class="hljs-string">'some id'</span>);  <span class="hljs-comment">// remove</span>
+</pre>
+</div>
+
+
+      <div>
+<section id='geojsonsource/setdata' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/source/geojson_source.js#L74-L84'>
+        <code class='icon floppy pad0'>js/source/geojson_source.js</code>
+      </a>
+    </div>
+  <h2 id='geojsonsource/setdata' class='space'>
+    <span>setData</span>
+    <span class='quiet'>(data)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Update source geojson data and rerender map</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>data</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>A GeoJSON data object or URL to it. The latter is preferable in case of large GeoJSON files.</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#geojsonsource">GeoJSONSource</a></code></code>
+      :
+      <span class='inline'>
+        <p>this</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+
+
+</section>
+<section id='imagesource' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/source/image_source.js#L32-L52'>
+        <code class='icon floppy pad0'>js/source/image_source.js</code>
+      </a>
+    </div>
+  <h2 id='imagesource' class='space'>
+    <span>ImageSource</span>
+    <span class='quiet'>([options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Create an Image source instance given an options object</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+          <tr>
+            <td>options.url</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+            </td>
+            <td><p>A string URL of an image file</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.coordinates</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>
+            </td>
+            <td><p>lng, lat coordinates in order clockwise
+starting at the top left: tl, tr, br, bl</p>
+</td>
+          </tr>
+    </table>
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> sourceObj = <span class="hljs-keyword">new</span> mapboxgl.ImageSource({
+   url: <span class="hljs-string">'https://www.mapbox.com/images/foo.png'</span>,
+   coordinates: [
+       [-<span class="hljs-number">76.54335737228394</span>, <span class="hljs-number">39.18579907229748</span>],
+       [-<span class="hljs-number">76.52803659439087</span>, <span class="hljs-number">39.1838364847587</span>],
+       [-<span class="hljs-number">76.5295386314392</span>, <span class="hljs-number">39.17683392507606</span>],
+       [-<span class="hljs-number">76.54520273208618</span>, <span class="hljs-number">39.17876344106642</span>]
+   ]
+});
+map.addSource(<span class="hljs-string">'some id'</span>, sourceObj); <span class="hljs-comment">// add</span>
+map.removeSource(<span class="hljs-string">'some id'</span>);  <span class="hljs-comment">// remove</span>
+</pre>
+</div>
+
+
+
+
+</section>
+<section id='keyboard' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/handler/keyboard.js#L30-L35'>
+        <code class='icon floppy pad0'>js/ui/handler/keyboard.js</code>
+      </a>
+    </div>
+  <h2 id='keyboard' class='space'>
+    <span>Keyboard</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>The <code>Keyboard</code> handler responds to keyboard input by zooming, rotating, or panning the
+map. The following keyboard shortcuts are supported:</p>
+<ul>
+<li><code>=</code> / <code>+</code>: increase zoom level by 1</li>
+<li><code>Shift-=</code> / <code>Shift-+</code>: increase zoom level by 2</li>
+<li><code>-</code>: decrease zoom level by 1</li>
+<li><code>Shift--</code>: decrease zoom level by 2</li>
+<li>Arrow keys: pan by 80 pixels</li>
+<li><code>Shift+⇢</code>: increase rotation by 2 degrees</li>
+<li><code>Shift+⇠</code>: decrease rotation by 2 degrees</li>
+<li><code>Shift+⇡</code>: increase pitch by 5 degrees</li>
+<li><code>Shift+⇣</code>: decrease pitch by 5 degrees</li>
+</ul>
+
+  </div>
+
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-comment">// Disable the keyboard handler</span>
+  map.keyboard.disable();
+</pre>
+<pre>
+<span class="hljs-comment">// Enable the keyboard handler</span>
+  map.keyboard.enable();
+</pre>
+</div>
+
+
+
+
+</section>
+<section id='lnglat' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat.js#L25-L34'>
+        <code class='icon floppy pad0'>js/geo/lng_lat.js</code>
+      </a>
+    </div>
+  <h2 id='lnglat' class='space'>
+    <span>LngLat</span>
+    <span class='quiet'>(lng, lat)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Create a longitude, latitude object from a given longitude and latitude pair in degrees.
+Mapbox GL uses Longitude, Latitude coordinate order to match GeoJSON.</p>
+<p>Note that any Mapbox GL method that accepts a <code>LngLat</code> object can also accept an
+<code>Array</code> and will perform an implicit conversion.  The following lines are equivalent:</p>
+<pre><code>map.setCenter([-73.9749, 40.7736]);
+map.setCenter( new mapboxgl.LngLat(-73.9749, 40.7736) );
+</code></pre>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>lng</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td><p>longitude</p>
+</td>
+        </tr>
+        <tr>
+          <td>lat</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td><p>latitude</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> ll = <span class="hljs-keyword">new</span> mapboxgl.LngLat(-<span class="hljs-number">73.9749</span>, <span class="hljs-number">40.7736</span>);
+</pre>
+</div>
+
+      <div>
+<section id='lnglat/convert' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat.js#L84-L92'>
+        <code class='icon floppy pad0'>js/geo/lng_lat.js</code>
+      </a>
+    </div>
+  <h2 id='lnglat/convert' class='space'>
+    <span>convert</span>
+    <span class='quiet'>(input)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Convert an array to a <code>LngLat</code> object, or return an existing <code>LngLat</code> object
+unchanged.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>input</td>
+          <td>
+            Array<<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>> or <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td><p><code>input</code> to convert</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglat">LngLat</a></code></code>
+      :
+      <span class='inline'>
+        <p>LngLat object or original input</p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> arr = [-<span class="hljs-number">73.9749</span>, <span class="hljs-number">40.7736</span>];
+<span class="hljs-keyword">var</span> ll = mapboxgl.LngLat.convert(arr);
+ll;   <span class="hljs-comment">// = LngLat {lng: -73.9749, lat: 40.7736}</span>
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+
+      <div>
+<section id='lnglat/toarray' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat.js#L57-L59'>
+        <code class='icon floppy pad0'>js/geo/lng_lat.js</code>
+      </a>
+    </div>
+  <h2 id='lnglat/toarray' class='space'>
+    <span>toArray</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Return a <code>LngLat</code> as an array</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></code></code>
+      :
+      <span class='inline'>
+        <p>[lng, lat]</p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> ll = <span class="hljs-keyword">new</span> mapboxgl.LngLat(-<span class="hljs-number">73.9749</span>, <span class="hljs-number">40.7736</span>);
+ll.toArray(); <span class="hljs-comment">// = [-73.9749, 40.7736]</span>
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglat/tostring' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat.js#L69-L71'>
+        <code class='icon floppy pad0'>js/geo/lng_lat.js</code>
+      </a>
+    </div>
+  <h2 id='lnglat/tostring' class='space'>
+    <span>toString</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Return a <code>LngLat</code> as a string</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></code>
+      :
+      <span class='inline'>
+        <p>&quot;LngLat(lng, lat)&quot;</p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> ll = <span class="hljs-keyword">new</span> mapboxgl.LngLat(-<span class="hljs-number">73.9749</span>, <span class="hljs-number">40.7736</span>);
+ll.toString(); <span class="hljs-comment">// = "LngLat(-73.9749, 40.7736)"</span>
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglat/wrap' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat.js#L45-L47'>
+        <code class='icon floppy pad0'>js/geo/lng_lat.js</code>
+      </a>
+    </div>
+  <h2 id='lnglat/wrap' class='space'>
+    <span>wrap</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Return a new <code>LngLat</code> object whose longitude is wrapped to the range (-180, 180).</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglat">LngLat</a></code></code>
+      :
+      <span class='inline'>
+        <p>wrapped LngLat object</p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> ll = <span class="hljs-keyword">new</span> mapboxgl.LngLat(<span class="hljs-number">286.0251</span>, <span class="hljs-number">40.7736</span>);
+<span class="hljs-keyword">var</span> wrapped = ll.wrap();
+wrapped.lng; <span class="hljs-comment">// = -73.9749</span>
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+
+
+</section>
+<section id='lnglatbounds' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L19-L27'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds' class='space'>
+    <span>LngLatBounds</span>
+    <span class='quiet'>(sw, ne)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Creates a bounding box from the given pair of points. If parameteres are omitted, a <code>null</code> bounding box is created.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>sw</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td><p>southwest</p>
+</td>
+        </tr>
+        <tr>
+          <td>ne</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td><p>northeast</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> sw = <span class="hljs-keyword">new</span> mapboxgl.LngLat(-<span class="hljs-number">73.9876</span>, <span class="hljs-number">40.7661</span>);
+<span class="hljs-keyword">var</span> ne = <span class="hljs-keyword">new</span> mapboxgl.LngLat(-<span class="hljs-number">73.9397</span>, <span class="hljs-number">40.8002</span>);
+<span class="hljs-keyword">var</span> llb = <span class="hljs-keyword">new</span> mapboxgl.LngLatBounds(sw, ne);
+</pre>
+</div>
+
+      <div>
+<section id='lnglatbounds/convert' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L167-L170'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/convert' class='space'>
+    <span>convert</span>
+    <span class='quiet'>(input)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Convert an array to a <code>LngLatBounds</code> object, or return an existing
+<code>LngLatBounds</code> object unchanged.</p>
+<p>Calls <code>LngLat#convert</code> internally to convert arrays as <code>LngLat</code> values.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>input</td>
+          <td>
+            <code><a href="#lnglatbounds">LngLatBounds</a></code> or Array<Array<<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>>>
+          </td>
+          <td><p>input to convert to a LngLatBounds</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglatbounds">LngLatBounds</a></code></code>
+      :
+      <span class='inline'>
+        <p>LngLatBounds object or original input</p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> arr = [[-<span class="hljs-number">73.9876</span>, <span class="hljs-number">40.7661</span>], [-<span class="hljs-number">73.9397</span>, <span class="hljs-number">40.8002</span>]];
+<span class="hljs-keyword">var</span> llb = mapboxgl.LngLatBounds.convert(arr);
+llb;   <span class="hljs-comment">// = LngLatBounds {_sw: LngLat {lng: -73.9876, lat: 40.7661}, _ne: LngLat {lng: -73.9397, lat: 40.8002}}</span>
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+
+      <div>
+<section id='lnglatbounds/extend' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L37-L68'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/extend' class='space'>
+    <span>extend</span>
+    <span class='quiet'>(obj)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Extend the bounds to include a given LngLat or LngLatBounds.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>obj</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code> or <code><a href="#lnglatbounds">LngLatBounds</a></code>
+          </td>
+          <td><p>object to extend to</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglatbounds">LngLatBounds</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglatbounds/getcenter' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L77-L79'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/getcenter' class='space'>
+    <span>getCenter</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the point equidistant from this box's corners</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglat">LngLat</a></code></code>
+      :
+      <span class='inline'>
+        <p>centerpoint</p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> llb = <span class="hljs-keyword">new</span> mapboxgl.LngLatBounds([-<span class="hljs-number">73.9876</span>, <span class="hljs-number">40.7661</span>], [-<span class="hljs-number">73.9397</span>, <span class="hljs-number">40.8002</span>]);
+llb.getCenter(); <span class="hljs-comment">// = LngLat {lng: -73.96365, lat: 40.78315}</span>
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglatbounds/geteast' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L121-L121'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/geteast' class='space'>
+    <span>getEast</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get east edge longitude</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
+      :
+      <span class='inline'>
+        <p>east</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglatbounds/getnorth' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L127-L127'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/getnorth' class='space'>
+    <span>getNorth</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get north edge latitude</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
+      :
+      <span class='inline'>
+        <p>north</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglatbounds/getnortheast' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L91-L91'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/getnortheast' class='space'>
+    <span>getNorthEast</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get northeast corner</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglat">LngLat</a></code></code>
+      :
+      <span class='inline'>
+        <p>northeast</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglatbounds/getnorthwest' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L97-L97'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/getnorthwest' class='space'>
+    <span>getNorthWest</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get northwest corner</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglat">LngLat</a></code></code>
+      :
+      <span class='inline'>
+        <p>northwest</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglatbounds/getsouth' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L115-L115'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/getsouth' class='space'>
+    <span>getSouth</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get south edge latitude</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
+      :
+      <span class='inline'>
+        <p>south</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglatbounds/getsoutheast' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L103-L103'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/getsoutheast' class='space'>
+    <span>getSouthEast</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get southeast corner</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglat">LngLat</a></code></code>
+      :
+      <span class='inline'>
+        <p>southeast</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglatbounds/getsouthwest' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L85-L85'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/getsouthwest' class='space'>
+    <span>getSouthWest</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get southwest corner</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglat">LngLat</a></code></code>
+      :
+      <span class='inline'>
+        <p>southwest</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglatbounds/getwest' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L109-L109'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/getwest' class='space'>
+    <span>getWest</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get west edge longitude</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
+      :
+      <span class='inline'>
+        <p>west</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglatbounds/toarray' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L137-L139'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/toarray' class='space'>
+    <span>toArray</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Return a <code>LngLatBounds</code> as an array</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></code></code>
+      :
+      <span class='inline'>
+        <p>[lng, lat]</p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> llb = <span class="hljs-keyword">new</span> mapboxgl.LngLatBounds([-<span class="hljs-number">73.9876</span>, <span class="hljs-number">40.7661</span>], [-<span class="hljs-number">73.9397</span>, <span class="hljs-number">40.8002</span>]);
+llb.toArray(); <span class="hljs-comment">// = [[-73.9876, 40.7661], [-73.9397, 40.8002]]</span>
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='lnglatbounds/tostring' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/geo/lng_lat_bounds.js#L149-L151'>
+        <code class='icon floppy pad0'>js/geo/lng_lat_bounds.js</code>
+      </a>
+    </div>
+  <h2 id='lnglatbounds/tostring' class='space'>
+    <span>toString</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Return a <code>LngLatBounds</code> as a string</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></code>
+      :
+      <span class='inline'>
+        <p>&quot;LngLatBounds(LngLat(lng, lat), LngLat(lng, lat))&quot;</p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> llb = <span class="hljs-keyword">new</span> mapboxgl.LngLatBounds([-<span class="hljs-number">73.9876</span>, <span class="hljs-number">40.7661</span>], [-<span class="hljs-number">73.9397</span>, <span class="hljs-number">40.8002</span>]);
+llb.toString(); <span class="hljs-comment">// = "LngLatBounds(LngLat(-73.9876, 40.7661), LngLat(-73.9397, 40.8002))"</span>
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+
+
+</section>
+<section id='map' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L61-L129'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map' class='space'>
+    <span>Map</span>
+    <span class='quiet'>(options)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Creates a map instance.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+          </td>
+          <td></td>
+        </tr>
+          <tr>
+            <td>options.container</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+            </td>
+            <td><p>HTML element to initialize the map in (or element id as string)</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.minZoom</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+              (default <code>0</code>)
+            </td>
+            <td><p>Minimum zoom of the map</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.maxZoom</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+              (default <code>20</code>)
+            </td>
+            <td><p>Maximum zoom of the map</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.style</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>]</code>
+            </td>
+            <td><p>Map style. This must be an an object conforming to the schema described in the <a href="https://mapbox.com/mapbox-gl-style-spec/">style reference</a>, or a URL to a JSON style. To load a style from the Mapbox API, you can use a URL of the form <code>mapbox://styles/:owner/:style</code>, where <code>:owner</code> is your Mapbox account name and <code>:style</code> is the style ID. Or you can use one of the predefined Mapbox styles:</p>
+<ul>
+<li><code>mapbox://styles/mapbox/basic-v8</code> - Simple and flexible starting template.</li>
+<li><code>mapbox://styles/mapbox/bright-v8</code> - Template for complex custom basemaps.</li>
+<li><code>mapbox://styles/mapbox/streets-v8</code> - A ready-to-use basemap, perfect for minor customization or incorporating your own data.</li>
+<li><code>mapbox://styles/mapbox/light-v8</code> - Subtle light backdrop for data vizualizations.</li>
+<li><code>mapbox://styles/mapbox/dark-v8</code> - Subtle dark backdrop for data vizualizations.</li>
+</ul>
+</td>
+          </tr>
+          <tr>
+            <td>options.hash</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>]</code>
+              (default <code>false</code>)
+            </td>
+            <td><p>If <code>true</code>, the map will track and update the page URL according to map position</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.interactive</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>]</code>
+              (default <code>true</code>)
+            </td>
+            <td><p>If <code>false</code>, no mouse, touch, or keyboard listeners are attached to the map, so it will not respond to input</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.bearingSnap</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+              (default <code>7</code>)
+            </td>
+            <td><p>Snap to north threshold in degrees.</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.classes</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>]</code>
+            </td>
+            <td><p>Style class names with which to initialize the map</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.attributionControl</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>]</code>
+              (default <code>true</code>)
+            </td>
+            <td><p>If <code>true</code>, an attribution control will be added to the map.</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.failIfMajorPerformanceCaveat</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>]</code>
+              (default <code>false</code>)
+            </td>
+            <td><p>If <code>true</code>, map creation will fail if the implementation determines that the performance of the created WebGL context would be dramatically lower than expected.</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.preserveDrawingBuffer</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>]</code>
+              (default <code>false</code>)
+            </td>
+            <td><p>If <code>true</code>, The maps canvas can be exported to a PNG using <code>map.getCanvas().toDataURL();</code>. This is false by default as a performance optimization.</p>
+</td>
+          </tr>
+    </table>
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> map = <span class="hljs-keyword">new</span> mapboxgl.Map({
+  container: <span class="hljs-string">'map'</span>,
+  center: [-<span class="hljs-number">122.420679</span>, <span class="hljs-number">37.772537</span>],
+  zoom: <span class="hljs-number">13</span>,
+  style: style_object,
+  hash: <span class="hljs-literal">true</span>
+});
+</pre>
+</div>
+
+
+      <div>
+<section id='map/addclass' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L177-L181'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/addclass' class='space'>
+    <span>addClass</span>
+    <span class='quiet'>(klass, [options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Adds a style class to a map</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>klass</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>name of style class</p>
+</td>
+        </tr>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="#styleoptions">StyleOptions</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/addlayer' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L496-L500'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/addlayer' class='space'>
+    <span>addLayer</span>
+    <span class='quiet'>(layer, [before])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Add a layer to the map style. The layer will be inserted before the layer with
+ID <code>before</code>, or appended if <code>before</code> is omitted.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>layer</td>
+          <td>
+            <code>StyleLayer</code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>before</td>
+          <td>
+            <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>]</code>
+          </td>
+          <td><p>ID of an existing layer to insert before</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/addsource' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L461-L464'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/addsource' class='space'>
+    <span>addSource</span>
+    <span class='quiet'>(id, source)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Add a source to the map style.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>id</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>ID of the source. Must not be used by any existing source.</p>
+</td>
+        </tr>
+        <tr>
+          <td>source</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+          </td>
+          <td><p>source specification, following the
+<a href="https://www.mapbox.com/mapbox-gl-style-spec/#sources">Mapbox GL Style Reference</a></p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/batch' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L383-L388'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/batch' class='space'>
+    <span>batch</span>
+    <span class='quiet'>(work)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Apply multiple style mutations in a batch</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>work</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">function</a></code>
+          </td>
+          <td><p>Function which accepts the StyleBatch interface</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+map.batch(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">batch</span>) </span>{
+    batch.addLayer(layer1);
+    batch.addLayer(layer2);
+    ...
+    batch.addLayer(layerN);
+});
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/collisiondebug' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L897-L897'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/collisiondebug' class='space'>
+    <span>collisionDebug</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Show collision boxes: useful for debugging label placement
+in styles.</p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/debug' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L886-L886'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/debug' class='space'>
+    <span>debug</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Enable debugging mode</p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/easeto' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L438-L504'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/easeto' class='space'>
+    <span>easeTo</span>
+    <span class='quiet'>(options)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Change any combination of center, zoom, bearing, and pitch, with a smooth animation
+between old and new values. The map will retain the current values for any options
+not included in <code>options</code>.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code><a href="#cameraoptions">CameraOptions</a></code> or <code><a href="#animationoptions">AnimationOptions</a></code>
+          </td>
+          <td><p>map view and animation options</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/featuresat' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L309-L314'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/featuresat' class='space'>
+    <span>featuresAt</span>
+    <span class='quiet'>(point, params, callback, err, features)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get all features at a point ([x, y]). Only works on layers where <code>interactive</code> is set to true.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>point</td>
+          <td>
+            Array<<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>>
+          </td>
+          <td><p>[x, y] pixel coordinates</p>
+</td>
+        </tr>
+        <tr>
+          <td>params</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+          </td>
+          <td></td>
+        </tr>
+          <tr>
+            <td>params.radius</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+              (default <code>0</code>)
+            </td>
+            <td><p>Radius in pixels to search in</p>
+</td>
+          </tr>
+          <tr>
+            <td>params.layer</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> or Array<<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>>]</code>
+            </td>
+            <td><p>Only return features from a given layer or layers</p>
+</td>
+          </tr>
+          <tr>
+            <td>params.type</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+            </td>
+            <td><p>Optional. Either <code>raster</code> or <code>vector</code></p>
+</td>
+          </tr>
+          <tr>
+            <td>params.includeGeometry</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>]</code>
+              (default <code>false</code>)
+            </td>
+            <td><p>Optional. If <code>true</code>, geometry of features will be included in the results at the expense of a much slower query time.</p>
+</td>
+          </tr>
+        <tr>
+          <td>callback</td>
+          <td>
+            <code>featuresAtCallback</code>
+          </td>
+          <td><p>function that returns the response</p>
+</td>
+        </tr>
+        <tr>
+          <td>err</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> or 
+          </td>
+          <td><p>Error <em>If any</em></p>
+</td>
+        </tr>
+        <tr>
+          <td>features</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>
+          </td>
+          <td><p>Displays a JSON array of features given the passed parameters of <code>featuresAt</code></p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+map.featuresAt([<span class="hljs-number">10</span>, <span class="hljs-number">20</span>], { radius: <span class="hljs-number">10</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, features</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(features);
+});
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/featuresin' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L344-L367'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/featuresin' class='space'>
+    <span>featuresIn</span>
+    <span class='quiet'>([bounds], params, callback, err, features)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get all features in a rectangle.</p>
+<p>Note: because features come from vector tiles, the returned features will be:</p>
+<ol>
+<li>Truncated at tile boundaries.</li>
+<li>Duplicated across tile boundaries.</li>
+</ol>
+<p>For example, suppose there is a highway running through your rectangle in a <code>featuresIn</code> query. <code>featuresIn</code> will only give you the parts of the highway feature that lie within the map tiles covering your rectangle, even if the road actually extends into other tiles. Also, the portion of the highway within each map tile will come back as a separate feature.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>bounds</td>
+          <td>
+            <code>[Array<<code>Point</code>> or Array<Array<<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>>>]</code>
+          </td>
+          <td><p>Coordinates of opposite corners of bounding rectangle, in pixel coordinates. Optional: use entire viewport if omitted.</p>
+</td>
+        </tr>
+        <tr>
+          <td>params</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+          </td>
+          <td></td>
+        </tr>
+          <tr>
+            <td>params.layer</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+            </td>
+            <td><p>Optional. Only return features from a given layer</p>
+</td>
+          </tr>
+          <tr>
+            <td>params.type</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+            </td>
+            <td><p>Optional. Either <code>raster</code> or <code>vector</code></p>
+</td>
+          </tr>
+        <tr>
+          <td>callback</td>
+          <td>
+            <code>featuresAtCallback</code>
+          </td>
+          <td><p>function that receives the response</p>
+</td>
+        </tr>
+        <tr>
+          <td>err</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> or 
+          </td>
+          <td><p>Error <em>If any</em></p>
+</td>
+        </tr>
+        <tr>
+          <td>features</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>
+          </td>
+          <td><p>A JSON array of features given the passed parameters of <code>featuresIn</code></p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+map.featuresIn([[<span class="hljs-number">10</span>, <span class="hljs-number">20</span>], [<span class="hljs-number">30</span>, <span class="hljs-number">50</span>], { layer: <span class="hljs-string">'my-layer-name'</span> },
+<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, features</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(features);
+});
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/fitbounds' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L346-L371'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/fitbounds' class='space'>
+    <span>fitBounds</span>
+    <span class='quiet'>(bounds, options)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Zoom to contain certain geographical bounds</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>bounds</td>
+          <td>
+            <code><a href="#lnglatbounds">LngLatBounds</a></code> or Array<Array<<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>>>
+          </td>
+          <td><p>[[minLng, minLat], [maxLng, maxLat]]</p>
+</td>
+        </tr>
+        <tr>
+          <td>options</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+          </td>
+          <td></td>
+        </tr>
+          <tr>
+            <td>options.speed</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+              (default <code>1.2</code>)
+            </td>
+            <td><p>How fast animation occurs</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.curve</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+              (default <code>1.42</code>)
+            </td>
+            <td><p>How much zooming out occurs during animation</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.easing</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>options.padding</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+            </td>
+            <td><p>how much padding there is around the given bounds on each side in pixels</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.maxZoom</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+            </td>
+            <td></td>
+          </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/flyto' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L530-L615'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/flyto' class='space'>
+    <span>flyTo</span>
+    <span class='quiet'>(options)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Flying animation to a specified location/zoom/bearing with automatic curve</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code><a href="#cameraoptions">CameraOptions</a></code>
+          </td>
+          <td><p>map view options</p>
+</td>
+        </tr>
+          <tr>
+            <td>options.speed</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+              (default <code>1.2</code>)
+            </td>
+            <td><p>How fast animation occurs</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.curve</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+              (default <code>1.42</code>)
+            </td>
+            <td><p>How much zooming out occurs during animation</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.easing</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>]</code>
+            </td>
+            <td></td>
+          </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code>this</code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-comment">// fly with default options to null island</span>
+map.flyTo({center: [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>], zoom: <span class="hljs-number">9</span>});
+<span class="hljs-comment">// using flyTo options</span>
+map.flyTo({
+  center: [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
+  zoom: <span class="hljs-number">9</span>,
+  speed: <span class="hljs-number">0.2</span>,
+  curve: <span class="hljs-number">1</span>,
+  easing: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+    <span class="hljs-keyword">return</span> t;
+  }
+});
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getbearing' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L223-L223'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/getbearing' class='space'>
+    <span>getBearing</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the current bearing in degrees</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getbounds' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L261-L265'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/getbounds' class='space'>
+    <span>getBounds</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the map's geographical bounds</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglatbounds">LngLatBounds</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getcanvas' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L644-L646'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/getcanvas' class='space'>
+    <span>getCanvas</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the Map's canvas as an HTML canvas</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a></code></code>
+      :
+      <span class='inline'>
+        <p>canvas</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getcanvascontainer' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L636-L638'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/getcanvascontainer' class='space'>
+    <span>getCanvasContainer</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the container for the map <code>canvas</code> element.</p>
+<p>If you want to add non-GL overlays to the map, you should append them to this element. This
+is the element to which event bindings for map interactivity such as panning and zooming are
+attached. It will receive bubbled events for child elements such as the <code>canvas</code>, but not for
+map controls.</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a></code></code>
+      :
+      <span class='inline'>
+        <p>container</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getcenter' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L42-L42'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/getcenter' class='space'>
+    <span>getCenter</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the current view geographical point.</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglat">LngLat</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getclasses' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L228-L230'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/getclasses' class='space'>
+    <span>getClasses</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Return an array of the current active style classes</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getcontainer' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L622-L624'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/getcontainer' class='space'>
+    <span>getContainer</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the Map's container as an HTML element</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a></code></code>
+      :
+      <span class='inline'>
+        <p>container</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getfilter' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L557-L559'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/getfilter' class='space'>
+    <span>getFilter</span>
+    <span class='quiet'>(layer)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the filter for a given style layer.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>layer</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>ID of a layer</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code></code>
+      :
+      <span class='inline'>
+        <p>filter specification, as defined in the <a href="https://www.mapbox.com/mapbox-gl-style-spec/#filter">Style Specification</a></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getlayer' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L522-L524'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/getlayer' class='space'>
+    <span>getLayer</span>
+    <span class='quiet'>(id)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Return the style layer object with the given <code>id</code>.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>id</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>layer ID</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getlayoutproperty' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L614-L616'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/getlayoutproperty' class='space'>
+    <span>getLayoutProperty</span>
+    <span class='quiet'>(layer, name, [klass])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the value of a layout property in a given style layer.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>layer</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>ID of a layer</p>
+</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>name of a layout property</p>
+</td>
+        </tr>
+        <tr>
+          <td>klass</td>
+          <td>
+            <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>]</code>
+          </td>
+          <td><p>optional class specifier for the property</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code>Any</code>
+      :
+      <span class='inline'>
+        <p>value for the layout propery</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getpaintproperty' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L586-L588'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/getpaintproperty' class='space'>
+    <span>getPaintProperty</span>
+    <span class='quiet'>(layer, name, [klass])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the value of a paint property in a given style layer.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>layer</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>ID of a layer</p>
+</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>name of a paint property</p>
+</td>
+        </tr>
+        <tr>
+          <td>klass</td>
+          <td>
+            <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>]</code>
+          </td>
+          <td><p>optional class specifier for the property</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code>Any</code>
+      :
+      <span class='inline'>
+        <p>value for the paint propery</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getpitch' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L316-L316'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/getpitch' class='space'>
+    <span>getPitch</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the current angle in degrees</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getsource' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L484-L486'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/getsource' class='space'>
+    <span>getSource</span>
+    <span class='quiet'>(id)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Return the style source object with the given <code>id</code>.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>id</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>source ID</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/getzoom' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L117-L117'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/getzoom' class='space'>
+    <span>getZoom</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the current zoom</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/hasclass' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L219-L221'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/hasclass' class='space'>
+    <span>hasClass</span>
+    <span class='quiet'>(klass)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Check whether a style class is active</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>klass</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>Name of style class</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/jumpto' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L383-L426'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/jumpto' class='space'>
+    <span>jumpTo</span>
+    <span class='quiet'>(options)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Change any combination of center, zoom, bearing, and pitch, without
+a transition. The map will retain the current values for any options
+not included in <code>options</code>.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code><a href="#cameraoptions">CameraOptions</a></code>
+          </td>
+          <td><p>map view options</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/loaded' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L718-L724'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/loaded' class='space'>
+    <span>loaded</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Is this map fully loaded? If the style isn't loaded
+or it has a change to the sources or style that isn't
+propagated to its style, return false.</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+      :
+      <span class='inline'>
+        <p>whether the map is loaded</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/onerror' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L815-L817'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/onerror' class='space'>
+    <span>onError</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>A default error handler for <code>style.error</code>, <code>source.error</code>, and <code>tile.error</code> events.
+It logs the error via <code>console.error</code>.</p>
+
+  </div>
+
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-comment">// Disable the default error handler</span>
+map.off(<span class="hljs-string">'style.error'</span>, map.onError);
+map.off(<span class="hljs-string">'source.error'</span>, map.onError);
+map.off(<span class="hljs-string">'tile.error'</span>, map.onError);
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/panby' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L68-L71'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/panby' class='space'>
+    <span>panBy</span>
+    <span class='quiet'>(offset, [options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Pan by a certain number of pixels</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>offset</td>
+          <td>
+            Array<<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>>
+          </td>
+          <td><p>[x, y]</p>
+</td>
+        </tr>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="#animationoptions">AnimationOptions</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/panto' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L82-L110'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/panto' class='space'>
+    <span>panTo</span>
+    <span class='quiet'>(lnglat, [options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Pan to a certain location with easing</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>lnglat</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td><p>Location to pan to</p>
+</td>
+        </tr>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="#animationoptions">AnimationOptions</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/project' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L273-L275'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/project' class='space'>
+    <span>project</span>
+    <span class='quiet'>(lnglat)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get pixel coordinates (relative to map container) given a geographical location</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>lnglat</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>x</code> and <code>y</code> coordinates</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/remove' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L794-L803'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/remove' class='space'>
+    <span>remove</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Destroys the map's underlying resources, including web workers.</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p>this</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/removeclass' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L191-L195'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/removeclass' class='space'>
+    <span>removeClass</span>
+    <span class='quiet'>(klass, [options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Removes a style class from a map</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>klass</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>name of style class</p>
+</td>
+        </tr>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="#styleoptions">StyleOptions</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/removelayer' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L510-L514'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/removelayer' class='space'>
+    <span>removeLayer</span>
+    <span class='quiet'>(id)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Remove the layer with the given <code>id</code> from the map. Any layers which refer to the
+specified layer via a <code>ref</code> property are also removed.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>id</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>layer id</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p>this</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/removesource' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L473-L476'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/removesource' class='space'>
+    <span>removeSource</span>
+    <span class='quiet'>(id)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Remove an existing source from the map style.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>id</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>ID of the source to remove</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/render' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L749-L788'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/render' class='space'>
+    <span>render</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Call when a (re-)render of the map is required, e.g. when the
+user panned or zoomed,f or new data is available.</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p>this</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/repaint' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L910-L910'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/repaint' class='space'>
+    <span>repaint</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Enable continuous repaint to analyze performance</p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/resetnorth' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L292-L295'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/resetnorth' class='space'>
+    <span>resetNorth</span>
+    <span class='quiet'>([options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Sets map bearing to 0 (north) with easing</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="#animationoptions">AnimationOptions</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/resize' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L237-L254'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/resize' class='space'>
+    <span>resize</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Detect the map's new width and height and resize it.</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/rotateto' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L250-L282'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/rotateto' class='space'>
+    <span>rotateTo</span>
+    <span class='quiet'>(bearing, [options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Rotate bearing by a certain number of degrees with easing</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>bearing</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="#animationoptions">AnimationOptions</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/setbearing' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L236-L239'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/setbearing' class='space'>
+    <span>setBearing</span>
+    <span class='quiet'>(bearing)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Sets a map rotation. Equivalent to <code>jumpTo({bearing: bearing})</code>.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>bearing</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td><p>Map rotation bearing in degrees counter-clockwise from north</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-comment">// rotate the map to 90 degrees</span>
+map.setBearing(<span class="hljs-number">90</span>);
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/setcenter' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L54-L57'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/setcenter' class='space'>
+    <span>setCenter</span>
+    <span class='quiet'>(center)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Sets a map location. Equivalent to <code>jumpTo({center: center})</code>.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>center</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td><p>Map center to jump to</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+map.setCenter([-<span class="hljs-number">74</span>, <span class="hljs-number">38</span>]);
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/setclasses' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L205-L211'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/setclasses' class='space'>
+    <span>setClasses</span>
+    <span class='quiet'>(klasses, [options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Helper method to add more than one class</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>klasses</td>
+          <td>
+            Array<<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>>
+          </td>
+          <td><p>An array of class names</p>
+</td>
+        </tr>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="#styleoptions">StyleOptions</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/setfilter' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L533-L536'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/setfilter' class='space'>
+    <span>setFilter</span>
+    <span class='quiet'>(layer, filter)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Set the filter for a given style layer.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>layer</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>ID of a layer</p>
+</td>
+        </tr>
+        <tr>
+          <td>filter</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>
+          </td>
+          <td><p>filter specification, as defined in the <a href="https://www.mapbox.com/mapbox-gl-style-spec/#filter">Style Specification</a></p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/setlayerzoomrange' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L546-L549'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/setlayerzoomrange' class='space'>
+    <span>setLayerZoomRange</span>
+    <span class='quiet'>(layerId, minzoom, maxzoom)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Set the zoom extent for a given style layer.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>layerId</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>ID of a layer</p>
+</td>
+        </tr>
+        <tr>
+          <td>minzoom</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td><p>minimum zoom extent</p>
+</td>
+        </tr>
+        <tr>
+          <td>maxzoom</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td><p>maximum zoom extent</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/setlayoutproperty' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L598-L604'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/setlayoutproperty' class='space'>
+    <span>setLayoutProperty</span>
+    <span class='quiet'>(layer, name, value)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Set the value of a layout property in a given style layer.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>layer</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>ID of a layer</p>
+</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>name of a layout property</p>
+</td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td>
+            Any
+          </td>
+          <td><p>value for the layout propery; must have the type appropriate for the property as defined in the <a href="https://www.mapbox.com/mapbox-gl-style-spec/">Style Specification</a></p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/setpaintproperty' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L570-L576'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/setpaintproperty' class='space'>
+    <span>setPaintProperty</span>
+    <span class='quiet'>(layer, name, value, [klass])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Set the value of a paint property in a given style layer.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>layer</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>ID of a layer</p>
+</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td><p>name of a paint property</p>
+</td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td>
+            Any
+          </td>
+          <td><p>value for the paint propery; must have the type appropriate for the property as defined in the <a href="https://www.mapbox.com/mapbox-gl-style-spec/">Style Specification</a></p>
+</td>
+        </tr>
+        <tr>
+          <td>klass</td>
+          <td>
+            <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>]</code>
+          </td>
+          <td><p>optional class specifier for the property</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/setpitch' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L326-L329'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/setpitch' class='space'>
+    <span>setPitch</span>
+    <span class='quiet'>(pitch)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Sets a map angle. Equivalent to <code>jumpTo({pitch: pitch})</code>.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>pitch</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td><p>The angle at which the camera is looking at the ground</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/setstyle' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L396-L450'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/setstyle' class='space'>
+    <span>setStyle</span>
+    <span class='quiet'>(style)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Replaces the map's style object</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>style</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+          </td>
+          <td><p>A style object formatted as JSON</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/setzoom' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L130-L133'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/setzoom' class='space'>
+    <span>setZoom</span>
+    <span class='quiet'>(zoom)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Sets a map zoom. Equivalent to <code>jumpTo({zoom: zoom})</code>.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>zoom</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td><p>Map zoom level</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-comment">// zoom the map to 5</span>
+map.setZoom(<span class="hljs-number">5</span>);
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/snaptonorth' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L305-L310'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/snaptonorth' class='space'>
+    <span>snapToNorth</span>
+    <span class='quiet'>([options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Animates map bearing to 0 (north) if it's already close to it.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="#animationoptions">AnimationOptions</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/stop' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L626-L632'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/stop' class='space'>
+    <span>stop</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Stop current animation</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/unproject' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L283-L285'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/unproject' class='space'>
+    <span>unproject</span>
+    <span class='quiet'>(point)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get geographical coordinates given pixel coordinates</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>point</td>
+          <td>
+            Array<<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>>
+          </td>
+          <td><p>[x, y] pixel coordinates</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglat">LngLat</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/update' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L733-L742'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/update' class='space'>
+    <span>update</span>
+    <span class='quiet'>(updateStyle)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Update this map's style and sources, and re-render the map.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>updateStyle</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>
+          </td>
+          <td><p>mark the map's style for reprocessing as
+well as its sources</p>
+</td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p>this</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/zoomin' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L200-L203'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/zoomin' class='space'>
+    <span>zoomIn</span>
+    <span class='quiet'>([options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Zoom in by 1 level</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="#animationoptions">AnimationOptions</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/zoomout' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L213-L216'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/zoomout' class='space'>
+    <span>zoomOut</span>
+    <span class='quiet'>([options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Zoom out by 1 level</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="#animationoptions">AnimationOptions</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/zoomto' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/camera.js#L144-L190'>
+        <code class='icon floppy pad0'>js/ui/camera.js</code>
+      </a>
+    </div>
+  <h2 id='map/zoomto' class='space'>
+    <span>zoomTo</span>
+    <span class='quiet'>(zoom, [options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Zooms to a certain zoom level with easing.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>zoom</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="#animationoptions">AnimationOptions</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#map">Map</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+
+      <div>
+<section id='map/click' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/interaction.js#L98-L107'>
+        <code class='icon floppy pad0'>js/ui/interaction.js</code>
+      </a>
+    </div>
+  <h2 id='map/click' class='space'>
+    <span>click</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Click event.</p>
+
+  </div>
+
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>property</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>point</td>
+          <td>
+            <code>Point</code>
+          </td>
+          <td><p>the pixel location of the event</p>
+</td>
+        </tr>
+        <tr>
+          <td>lngLat</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td><p>the geographic location of the event</p>
+</td>
+        </tr>
+        <tr>
+          <td>originalEvent</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a></code>
+          </td>
+          <td><p>the original DOM event</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/contextmenu' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/interaction.js#L98-L107'>
+        <code class='icon floppy pad0'>js/ui/interaction.js</code>
+      </a>
+    </div>
+  <h2 id='map/contextmenu' class='space'>
+    <span>contextmenu</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Context menu event.</p>
+
+  </div>
+
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>property</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>point</td>
+          <td>
+            <code>Point</code>
+          </td>
+          <td><p>the pixel location of the event</p>
+</td>
+        </tr>
+        <tr>
+          <td>lngLat</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td><p>the geographic location of the event</p>
+</td>
+        </tr>
+        <tr>
+          <td>originalEvent</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a></code>
+          </td>
+          <td><p>the original DOM event</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/dblclick' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/interaction.js#L98-L107'>
+        <code class='icon floppy pad0'>js/ui/interaction.js</code>
+      </a>
+    </div>
+  <h2 id='map/dblclick' class='space'>
+    <span>dblclick</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Double click event.</p>
+
+  </div>
+
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>property</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>point</td>
+          <td>
+            <code>Point</code>
+          </td>
+          <td><p>the pixel location of the event</p>
+</td>
+        </tr>
+        <tr>
+          <td>lngLat</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td><p>the geographic location of the event</p>
+</td>
+        </tr>
+        <tr>
+          <td>originalEvent</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a></code>
+          </td>
+          <td><p>the original DOM event</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/load' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/interaction.js#L98-L107'>
+        <code class='icon floppy pad0'>js/ui/interaction.js</code>
+      </a>
+    </div>
+  <h2 id='map/load' class='space'>
+    <span>load</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Load event. This event is emitted immediately after all necessary resources have been downloaded
+and the first visually complete rendering has occurred.</p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/mousemove' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/interaction.js#L98-L107'>
+        <code class='icon floppy pad0'>js/ui/interaction.js</code>
+      </a>
+    </div>
+  <h2 id='map/mousemove' class='space'>
+    <span>mousemove</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Mouse move event.</p>
+
+  </div>
+
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>property</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>point</td>
+          <td>
+            <code>Point</code>
+          </td>
+          <td><p>the pixel location of the event</p>
+</td>
+        </tr>
+        <tr>
+          <td>lngLat</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td><p>the geographic location of the event</p>
+</td>
+        </tr>
+        <tr>
+          <td>originalEvent</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a></code>
+          </td>
+          <td><p>the original DOM event</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/move' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/interaction.js#L98-L107'>
+        <code class='icon floppy pad0'>js/ui/interaction.js</code>
+      </a>
+    </div>
+  <h2 id='map/move' class='space'>
+    <span>move</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Move event. This event is emitted repeatedly during animated transitions from one view to
+another, either as a result of user interaction or the use of methods such as <code>Map#jumpTo</code>.</p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/moveend' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/interaction.js#L98-L107'>
+        <code class='icon floppy pad0'>js/ui/interaction.js</code>
+      </a>
+    </div>
+  <h2 id='map/moveend' class='space'>
+    <span>moveend</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Move end event. This event is emitted just after the map completes a transition from one
+view to another, either as a result of user interaction or the use of methods such as <code>Map#jumpTo</code>.</p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/movestart' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/interaction.js#L98-L107'>
+        <code class='icon floppy pad0'>js/ui/interaction.js</code>
+      </a>
+    </div>
+  <h2 id='map/movestart' class='space'>
+    <span>movestart</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Move start event. This event is emitted just before the map begins a transition from one
+view to another, either as a result of user interaction or the use of methods such as <code>Map#jumpTo</code>.</p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/webglcontextlost' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L689-L695'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/webglcontextlost' class='space'>
+    <span>webglcontextlost</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>WebGL Context Lost event.</p>
+
+  </div>
+
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>property</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>originalEvent</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a></code>
+          </td>
+          <td><p>the original DOM event</p>
+</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='map/webglcontextrestored' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L704-L709'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='map/webglcontextrestored' class='space'>
+    <span>webglcontextrestored</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>WebGL Context Restored event.</p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+      </div>
+
+</section>
+<section id='mapboxgl' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/mapbox-gl.js#L12-L12'>
+        <code class='icon floppy pad0'>js/mapbox-gl.js</code>
+      </a>
+    </div>
+  <h2 id='mapboxgl' class='space'>
+    <span>mapboxgl</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>mapboxgl is a A WebGL JavaScript interactive maps library that can render
+<a href="https://www.mapbox.com/blog/vector-tiles/">Mapbox vector tiles</a>.</p>
+
+  </div>
+
+
+
+
+
+
+      <div>
+<section id='mapboxgl/supported' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/util/browser/browser.js#L57-L111'>
+        <code class='icon floppy pad0'>js/util/browser/browser.js</code>
+      </a>
+    </div>
+  <h2 id='mapboxgl/supported' class='space'>
+    <span>supported</span>
+    <span class='quiet'>(options)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Test whether the basic JavaScript and DOM features required for Mapbox GL are present.</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+          </td>
+          <td></td>
+        </tr>
+          <tr>
+            <td>options.failIfMajorPerformanceCaveat</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>]</code>
+              (default <code>false</code>)
+            </td>
+            <td><p>If <code>true</code>, map creation will fail if the implementation determines that the performance of the created WebGL context would be dramatically lower than expected.</p>
+</td>
+          </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+      :
+      <span class='inline'>
+        <p>Returns true if Mapbox GL should be expected to work, and false if not.</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+
+
+
+</section>
+<section id='navigation' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/control/navigation.js#L17-L19'>
+        <code class='icon floppy pad0'>js/ui/control/navigation.js</code>
+      </a>
+    </div>
+  <h2 id='navigation' class='space'>
+    <span>Navigation</span>
+    <span class='quiet'>([options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Creates a navigation control with zoom buttons and a compass</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+          <tr>
+            <td>options.position</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>]</code>
+              (default <code>top-right</code>)
+            </td>
+            <td><p>A string indicating the control's position on the map. Options are <code>top-right</code>, <code>top-left</code>, <code>bottom-right</code>, <code>bottom-left</code></p>
+</td>
+          </tr>
+    </table>
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+map.addControl(<span class="hljs-keyword">new</span> mapboxgl.Navigation({position: <span class="hljs-string">'top-left'</span>})); <span class="hljs-comment">// position is optional</span>
+</pre>
+</div>
+
+
+
+
+</section>
+<section id='popup' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/popup.js#L22-L28'>
+        <code class='icon floppy pad0'>js/ui/popup.js</code>
+      </a>
+    </div>
+  <h2 id='popup' class='space'>
+    <span>Popup</span>
+    <span class='quiet'>(options)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Creates a popup component</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+          </td>
+          <td></td>
+        </tr>
+          <tr>
+            <td>options.closeButton</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>options.closeOnClick</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>
+            </td>
+            <td></td>
+          </tr>
+    </table>
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> tooltip = <span class="hljs-keyword">new</span> mapboxgl.Popup()
+  .setLngLat(e.lngLat)
+  .setHTML(<span class="hljs-string">"&lt;h1&gt;Hello World!&lt;/h1&gt;"</span>)
+  .addTo(map);
+</pre>
+</div>
+
+
+      <div>
+<section id='popup/addto' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/popup.js#L41-L49'>
+        <code class='icon floppy pad0'>js/ui/popup.js</code>
+      </a>
+    </div>
+  <h2 id='popup/addto' class='space'>
+    <span>addTo</span>
+    <span class='quiet'>(map)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Attaches the popup to a map</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>map</td>
+          <td>
+            <code><a href="#map">Map</a></code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#popup">Popup</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='popup/getlnglat' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/popup.js#L76-L78'>
+        <code class='icon floppy pad0'>js/ui/popup.js</code>
+      </a>
+    </div>
+  <h2 id='popup/getlnglat' class='space'>
+    <span>getLngLat</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Get the current coordinates of popup element relative to map</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#lnglat">LngLat</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='popup/remove' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/popup.js#L58-L70'>
+        <code class='icon floppy pad0'>js/ui/popup.js</code>
+      </a>
+    </div>
+  <h2 id='popup/remove' class='space'>
+    <span>remove</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Removes the popup from the map</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#popup">Popup</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> popup = <span class="hljs-keyword">new</span> mapboxgl.Popup().addTo(map);
+popup.remove();
+</pre>
+</div>
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='popup/sethtml' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/popup.js#L107-L120'>
+        <code class='icon floppy pad0'>js/ui/popup.js</code>
+      </a>
+    </div>
+  <h2 id='popup/sethtml' class='space'>
+    <span>setHTML</span>
+    <span class='quiet'>(html)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Fill a popup element with HTML content</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>html</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#popup">Popup</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='popup/setlnglat' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/popup.js#L85-L89'>
+        <code class='icon floppy pad0'>js/ui/popup.js</code>
+      </a>
+    </div>
+  <h2 id='popup/setlnglat' class='space'>
+    <span>setLngLat</span>
+    <span class='quiet'>(lnglat)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Set the coordinates of a popup element to a map</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>lnglat</td>
+          <td>
+            <code><a href="#lnglat">LngLat</a></code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#popup">Popup</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div>
+<section id='popup/settext' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/popup.js#L96-L100'>
+        <code class='icon floppy pad0'>js/ui/popup.js</code>
+      </a>
+    </div>
+  <h2 id='popup/settext' class='space'>
+    <span>setText</span>
+    <span class='quiet'>(text)</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Fill a popup element with text only content</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>text</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="#popup">Popup</a></code></code>
+      :
+      <span class='inline'>
+        <p><code>this</code></p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+
+
+</section>
+<section id='styleoptions' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/ui/map.js#L61-L129'>
+        <code class='icon floppy pad0'>js/ui/map.js</code>
+      </a>
+    </div>
+  <h2 id='styleoptions' class='space'>
+    <span>StyleOptions</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Options common to Map#addClass, Map#removeClass, and Map#setClasses, controlling
+whether or not to smoothly transition property changes triggered by the class change.</p>
+
+  </div>
+
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>property</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>transition</td>
+          <td>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>
+          </td>
+          <td></td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+</section>
+<section id='vertex-attribute-alignment' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/data/buffer.js#L250-L250'>
+        <code class='icon floppy pad0'>js/data/buffer.js</code>
+      </a>
+    </div>
+  <h2 id='vertex-attribute-alignment' class='space'>
+    <span>VERTEX_ATTRIBUTE_ALIGNMENT</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>WebGL performs best if vertex attribute offsets are aligned to 4 byte boundaries.</p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</section>
+<section id='videosource' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/source/video_source.js#L34-L65'>
+        <code class='icon floppy pad0'>js/source/video_source.js</code>
+      </a>
+    </div>
+  <h2 id='videosource' class='space'>
+    <span>VideoSource</span>
+    <span class='quiet'>([options])</span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Create a Video data source instance given an options object</p>
+
+  </div>
+
+    <table class='prose space-bottom1'>
+      <thead>
+        <th>parameter</th>
+        <th>type</th>
+        <th>description</th>
+      </thead>
+        <tr>
+          <td>options</td>
+          <td>
+            <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>]</code>
+          </td>
+          <td></td>
+        </tr>
+          <tr>
+            <td>options.urls</td>
+            <td>
+              Array<<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>>
+            </td>
+            <td><p>An array of URLs to video files</p>
+</td>
+          </tr>
+          <tr>
+            <td>options.coordinates</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>
+            </td>
+            <td><p>lng, lat coordinates in order clockwise starting at the top left: tl, tr, br, bl</p>
+</td>
+          </tr>
+    </table>
+
+
+
+
+    <h4 class='space-bottom1'>Examples</h4>
+<div class='prose'>
+<pre>
+<span class="hljs-keyword">var</span> sourceObj = <span class="hljs-keyword">new</span> mapboxgl.VideoSource({
+   url: [
+       <span class="hljs-string">'https://www.mapbox.com/videos/baltimore-smoke.mp4'</span>,
+       <span class="hljs-string">'https://www.mapbox.com/videos/baltimore-smoke.webm'</span>
+   ],
+   coordinates: [
+       [-<span class="hljs-number">76.54335737228394</span>, <span class="hljs-number">39.18579907229748</span>],
+       [-<span class="hljs-number">76.52803659439087</span>, <span class="hljs-number">39.1838364847587</span>],
+       [-<span class="hljs-number">76.5295386314392</span>, <span class="hljs-number">39.17683392507606</span>],
+       [-<span class="hljs-number">76.54520273208618</span>, <span class="hljs-number">39.17876344106642</span>]
+   ]
+});
+map.addSource(<span class="hljs-string">'some id'</span>, sourceObj); <span class="hljs-comment">// add</span>
+map.removeSource(<span class="hljs-string">'some id'</span>);  <span class="hljs-comment">// remove</span>
+</pre>
+</div>
+
+
+      <div>
+<section id='videosource/getvideo' class='pad2 keyline-bottom'>
+    <div class='fr space'>
+      <a class='quiet' href='https://github.com/patrickarlt/mapbox-gl-js/blob/ae4532931c4e66fcb230be779d4fffec0416e37d/js/source/video_source.js#L75-L77'>
+        <code class='icon floppy pad0'>js/source/video_source.js</code>
+      </a>
+    </div>
+  <h2 id='videosource/getvideo' class='space'>
+    <span>getVideo</span>
+    <span class='quiet'></span>
+  </h2>
+
+  <div class='prose space-bottom2'>
+    <p>Return the HTML video element.</p>
+
+  </div>
+
+
+
+      <h4 class='space-bottom1'>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      
+      <span class='inline'>
+        
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+
+
+</section>
+
