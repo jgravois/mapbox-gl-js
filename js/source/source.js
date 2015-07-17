@@ -8,7 +8,7 @@ var normalizeURL = require('../util/mapbox').normalizeSourceURL;
 var TileCoord = require('./tile_coord');
 
 exports._loadTileJSON = function(options) {
-        
+
     var loaded = function(err, tileJSON) {
         if (err) {
             this.fire('error', {error: err});
@@ -46,7 +46,7 @@ exports._loadTileJSON = function(options) {
                   return;
                 }
 
-                util.extend(this._pyramid, index);       
+                util.extend(this._pyramid, index);
                 this.fire('load');
 
             }.bind(this));
