@@ -23,7 +23,28 @@ exports._loadTileJSON = function(options) {
             this.vectorLayerIds = this.vectorLayers.map(function(layer) { return layer.id; });
         }
 
+        // if index is defined, fetch the index json, then extend the pyramid
+        if (tileJSON.index) {
+            ajax.getJSON(normalizeURL(tileJSON.index), function (err, index) {
+                if (err) {
+                  this.fire('error', {error: err});
+                  return;
+                }
+
+                buildPyramid(null, index);
+                this.fire('load');
+
+            }.bind(this));
+        } else {
+            buildPyramid(null, {});
+            this.fire('load');
+        }
+
+    }.bind(this);
+
+    var buildPyramid = function (err, index) {
         this._pyramid = new TilePyramid({
+            index: index.index,
             tileSize: this.tileSize,
             cacheSize: 20,
             minzoom: this.minzoom,
@@ -37,23 +58,6 @@ exports._loadTileJSON = function(options) {
             remove: this._removeTile.bind(this),
             redoPlacement: this._redoTilePlacement ? this._redoTilePlacement.bind(this) : undefined
         });
-
-        // if index is defined, fetch the index json, then extend the pyramid
-        if (tileJSON.index) {
-            ajax.getJSON(normalizeURL(tileJSON.index), function (err, index) {
-                if (err) {
-                  this.fire('error', {error: err});
-                  return;
-                }
-
-                util.extend(this._pyramid, index);
-                this.fire('load');
-
-            }.bind(this));
-        } else {
-            this.fire('load');
-        }
-
     }.bind(this);
 
     if (options.url) {
