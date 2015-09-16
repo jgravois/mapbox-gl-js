@@ -54,7 +54,7 @@ exports._loadTileJSON = function(options) {
 
             }.bind(this));
         } else {
-            buildPyramid({});
+            buildPyramid();
             this.fire('load');
         }
 
