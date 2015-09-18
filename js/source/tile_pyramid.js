@@ -425,9 +425,9 @@ TilePyramid.prototype = {
 
         var parentTile = tile;
         while (id !== 0) {
-          parentTile = parentTile.parent();
-          id = parentTile.id;
-          ids.push(id);
+            parentTile = parentTile.parent();
+            id = parentTile.id;
+            ids.push(id);
         }
 
         var cursor = this.index,
@@ -435,7 +435,7 @@ TilePyramid.prototype = {
             index;
 
         var pluckId = function (coord) {
-          return coord.id;
+            return coord.id;
         };
 
         while (ids.length) {
@@ -443,21 +443,20 @@ TilePyramid.prototype = {
             tile = TileCoord.fromID(cursorId);
             index = tile.children(this.maxzoom).map(pluckId).indexOf(id);
             if (cursor) {
-              if (cursor[index] === 0) {
-                id = cursorId;
-                break;
-              } else if (cursor[index] === 1) {
-                break;
-              } else {
-                cursorId = id;
-                cursor = cursor[index];
-              }
+                if (cursor[index] === 0) {
+                    id = cursorId;
+                    break;
+                } else if (cursor[index] === 1) {
+                    cursorId = id;
+                    break;
+                } else {
+                    cursorId = id;
+                    cursor = cursor[index];
+                }
             }
         }
-        return (id !== cursorId) ? cursorId : false;
+        return cursorId;
     }
-
-
 };
 
 function compareKeyZoom(a, b) {
