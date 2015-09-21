@@ -88,7 +88,7 @@ WorkerTile.prototype.parse = function(data, layers, actor, callback, dz, xPos, y
         for (var i = 0; i < layer.length; i++) {
             var feature = layer.feature(i);
 
-            //MOB
+            // propagate clipped position in tile at the feature level
             feature.dz = dz;
             feature.xPos = xPos;
             feature.yPos = yPos;
