@@ -29,6 +29,17 @@ FillBucket.prototype.shaders = {
     }
 };
 
+FillBucket.prototype.addFeatures = function() {
+    var features = this.features;
+    for (var i = 0; i < features.length; i++) {
+        var feature = features[i];
+        var geom = feature.loadGeometry();
+        if (geom) {
+            this.addFeature(geom);
+        }
+    }
+};
+
 FillBucket.prototype.addFeature = function(feature) {
     var lines = feature.loadGeometry();
     for (var i = 0; i < lines.length; i++) {
