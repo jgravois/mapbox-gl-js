@@ -66,30 +66,32 @@ exports._renderTiles = function(layers, painter) {
     if (!this._pyramid)
         return;
 
-    var ids = this._pyramid.renderedIDs();
-    for (var i = 0; i < ids.length; i++) {
-        var tile = this._pyramid.getTile(ids[i]),
-            // coord is different than tile.coord for wrapped tiles since the actual
-            // tile object is shared between all the visible copies of that tile.
-            coord = TileCoord.fromID(ids[i]),
-            z = coord.z,
-            x = coord.x,
-            y = coord.y,
-            w = coord.w;
+	for (var pass = 0; pass < 2; pass++) { // One pass for texts & symbols, the other for all other painting
+		var ids = this._pyramid.renderedIDs();
+		for (var i = 0; i < ids.length; i++) {
+			var tile = this._pyramid.getTile(ids[i]),
+				// coord is different than tile.coord for wrapped tiles since the actual
+				// tile object is shared between all the visible copies of that tile.
+				coord = TileCoord.fromID(ids[i]),
+				z = coord.z,
+				x = coord.x,
+				y = coord.y,
+				w = coord.w;
 
-        // if z > maxzoom then the tile is actually a overscaled maxzoom tile,
-        // so calculate the matrix the maxzoom tile would use.
-        z = Math.min(z, this.maxzoom);
+			// if z > maxzoom then the tile is actually a overscaled maxzoom tile,
+			// so calculate the matrix the maxzoom tile would use.
+			z = Math.min(z, this.maxzoom);
 
-        // leaf tiles and clipped tiles always use 4096
-        if (tile.tileExtent > 4096 || tile.parentId)
-            tile.tileExtent = 4096;
+            // leaf tiles and clipped tiles always use 4096
+            if (tile.tileExtent > 4096 || tile.parentId)
+                tile.tileExtent = 4096;
 
-        x += w * (1 << z);
-        tile.calculateMatrices(z, x, y, painter.transform, painter);
+			x += w * (1 << z);
+			tile.calculateMatrices(z, x, y, painter.transform, painter);
 
-        painter.drawTile(tile, layers);
-    }
+			painter.drawTile(tile, layers, pass === 0);
+		}
+	}
 };
 
 exports._vectorFeaturesAt = function(coord, params, callback) {

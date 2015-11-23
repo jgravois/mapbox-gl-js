@@ -17,8 +17,9 @@ function drawSymbols(painter, layer, posMatrix, tile) {
         layer.layout['text-ignore-placement'] || layer.layout['icon-ignore-placement']);
 
     var gl = painter.gl;
+	var useStencil = gl.getParameter(gl.STENCIL_TEST);
 
-    if (drawAcrossEdges) {
+    if (drawAcrossEdges && useStencil) {
         // Disable the stencil test so that labels aren't clipped to tile boundaries.
         //
         // Layers with features that may be drawn overlapping aren't clipped. These
@@ -36,7 +37,7 @@ function drawSymbols(painter, layer, posMatrix, tile) {
 
     drawCollisionDebug(painter, layer, posMatrix, tile);
 
-    if (drawAcrossEdges) {
+    if (drawAcrossEdges && useStencil) {
         gl.enable(gl.STENCIL_TEST);
     }
 }
