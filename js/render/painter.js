@@ -268,50 +268,68 @@ Painter.prototype.render = function(style, options) {
 
 Painter.prototype.drawTile = function(tile, layers, drawSymbols) {
     this.setExtent(tile.tileExtent);
-	if (drawSymbols)
-		this.drawOnlySymbols(layers, tile.posMatrix, tile);
-	else {
-		this.drawClippingMask(tile);
-		this.drawNonSymbols(layers, tile.posMatrix, tile);
-	}
+    if (drawSymbols) {
+        this.drawOnlySymbols(layers, tile.posMatrix, tile);
+    }
+    else {
+        this.drawClippingMask(tile);
+        this.drawNonSymbols(layers, tile.posMatrix, tile);
+    }
 
     if (this.options.debug) {
         draw.debug(this, tile);
     }
 };
 
+Painter.prototype.drawLayers = function (layers, matrix, tile) {
+    for (var i = layers.length - 1; i >= 0; i--) {
+        var layer = layers[i];
+
+        if (layer.hidden)
+          continue;
+
+        draw[layer.type](this, layer, matrix, tile);
+
+        if (this.options.vertices) {
+          draw.vertices(this, layer, matrix, tile);
+        }
+    }
+};
+
 Painter.prototype.drawOnlySymbols = function (layers, matrix, tile) {
-	for (var i = layers.length - 1; i >= 0; i--) {
-		var layer = layers[i];
-        
+    for (var i = layers.length - 1; i >= 0; i--) {
+      var layer = layers[i];
+
         if (layer.hidden)
             continue;
-            
-		if (layer.type !== "symbol")
+
+        if (layer.type !== "symbol")
             continue;
-            
+
         draw[layer.type](this, layer, matrix, tile);
-        
-		if (this.options.vertices)
-			draw.vertices(this, layer, matrix, tile);
-	}
+
+        if (this.options.vertices) {
+          draw.vertices(this, layer, matrix, tile);
+        }
+    }
 };
 
 Painter.prototype.drawNonSymbols = function (layers, matrix, tile) {
-	for (var i = layers.length - 1; i >= 0; i--) {
-		var layer = layers[i];
+    for (var i = layers.length - 1; i >= 0; i--) {
+        var layer = layers[i];
 
         if (layer.hidden)
             continue;
-            
-		if (layer.type === "symbol")
+
+        if (layer.type === "symbol")
             continue;
-            
-		draw[layer.type](this, layer, matrix, tile);
-        
-		if (this.options.vertices)
-			draw.vertices(this, layer, matrix, tile);
-	}
+
+        draw[layer.type](this, layer, matrix, tile);
+
+        if (this.options.vertices) {
+          draw.vertices(this, layer, matrix, tile);
+        }
+    }
 };
 
 // Draws non-opaque areas. This is for debugging purposes.
