@@ -21,9 +21,6 @@ suite.run('js', {tests: tests}, function(style, options, callback) {
                 add: function() {}
             }
         },
-        center: [options.center[1], options.center[0]],
-        zoom: options.zoom,
-        bearing: options.bearing,
         style: style,
         classes: options.classes,
         interactive: false,

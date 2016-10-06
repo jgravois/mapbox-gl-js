@@ -5,7 +5,6 @@ var styleBatch = require('./style_batch');
 var StyleLayer = require('./style_layer');
 var ImageSprite = require('./image_sprite');
 var GlyphSource = require('../symbol/glyph_source');
-var GlyphAtlas = require('../symbol/glyph_atlas');
 var SpriteAtlas = require('../symbol/sprite_atlas');
 var LineAtlas = require('../render/line_atlas');
 var util = require('../util/util');
@@ -21,9 +20,7 @@ module.exports = Style;
 function Style(stylesheet, animationLoop) {
     this.animationLoop = animationLoop || new AnimationLoop();
     this.dispatcher = new Dispatcher(Math.max(browser.hardwareConcurrency - 1, 1), this);
-    this.glyphAtlas = new GlyphAtlas(1024, 1024);
     this.spriteAtlas = new SpriteAtlas(512, 512);
-    this.spriteAtlas.resize(browser.devicePixelRatio);
     this.lineAtlas = new LineAtlas(256, 512);
 
     this._layers = {};
@@ -66,7 +63,7 @@ function Style(stylesheet, animationLoop) {
             this.sprite.on('load', this.fire.bind(this, 'change'));
         }
 
-        this.glyphSource = new GlyphSource(stylesheet.glyphs, this.glyphAtlas);
+        this.glyphSource = new GlyphSource(stylesheet.glyphs);
         this._resolve();
         this.fire('load');
     }.bind(this);
@@ -76,10 +73,40 @@ function Style(stylesheet, animationLoop) {
     } else {
         browser.frame(loaded.bind(this, null, stylesheet));
     }
+
+    this.on('source.load', function(event) {
+        var source = event.source;
+        if (source && source.vectorLayerIds) {
+            for (var layerId in this._layers) {
+                var layer = this._layers[layerId];
+                if (layer.source === source.id) {
+                    this._validateLayer(layer);
+                }
+            }
+        }
+    });
 }
 
 Style.prototype = util.inherit(Evented, {
     _loaded: false,
+
+    _validateLayer: function(layer) {
+        var source = this.sources[layer.source];
+
+        if (!layer.sourceLayer) return;
+        if (!source) return;
+        if (!source.vectorLayerIds) return;
+
+        if (source.vectorLayerIds.indexOf(layer.sourceLayer) === -1) {
+            this.fire('error', {
+                error: new Error(
+                    'Source layer "' + layer.sourceLayer + '" ' +
+                    'does not exist on source "' + source.id + '" ' +
+                    'as specified by style layer "' + layer.id + '"'
+                )
+            });
+        }
+    },
 
     loaded: function() {
         if (!this._loaded)
@@ -96,26 +123,28 @@ Style.prototype = util.inherit(Evented, {
     },
 
     _resolve: function() {
-        var id, layer;
+        var layer, layerJSON;
 
         this._layers = {};
-        this._order  = [];
+        this._order  = this.stylesheet.layers.map(function(layer) {
+            return layer.id;
+        });
 
+        // resolve all layers WITHOUT a ref
         for (var i = 0; i < this.stylesheet.layers.length; i++) {
-            layer = new StyleLayer(this.stylesheet.layers[i]);
+            layerJSON = this.stylesheet.layers[i];
+            if (layerJSON.ref) continue;
+            layer = StyleLayer.create(layerJSON);
             this._layers[layer.id] = layer;
-            this._order.push(layer.id);
         }
 
-        // Resolve layout properties.
-        for (id in this._layers) {
-            this._layers[id].resolveLayout();
-        }
-
-        // Resolve reference and paint properties.
-        for (id in this._layers) {
-            this._layers[id].resolveReference(this._layers);
-            this._layers[id].resolvePaint();
+        // resolve all layers WITH a ref
+        for (var j = 0; j < this.stylesheet.layers.length; j++) {
+            layerJSON = this.stylesheet.layers[j];
+            if (!layerJSON.ref) continue;
+            var refLayer = this.getLayer(layerJSON.ref);
+            layer = StyleLayer.create(layerJSON, refLayer);
+            this._layers[layer.id] = layer;
         }
 
         this._groupLayers();
@@ -142,13 +171,9 @@ Style.prototype = util.inherit(Evented, {
     },
 
     _broadcastLayers: function() {
-        var ordered = [];
-
-        for (var id in this._layers) {
-            ordered.push(this._layers[id].json());
-        }
-
-        this.dispatcher.broadcast('set layers', ordered);
+        this.dispatcher.broadcast('set layers', this._order.map(function(id) {
+            return this._layers[id].serialize();
+        }, this));
     },
 
     _cascade: function(classes, options) {
@@ -177,7 +202,8 @@ Style.prototype = util.inherit(Evented, {
         for (id in this._layers) {
             var layer = this._layers[id];
 
-            if (layer.recalculate(z, this.zoomHistory) && layer.source) {
+            layer.recalculate(z, this.zoomHistory);
+            if (!layer.isHidden(z) && layer.source) {
                 this.sources[layer.source].used = true;
             }
         }
@@ -291,9 +317,10 @@ Style.prototype = util.inherit(Evented, {
     },
 
     /**
-     * Get a layer by id.
-     * @param {string} id id of the desired layer
-     * @returns {Layer} layer
+     * Return the style layer object with the given `id`.
+     *
+     * @param {string} id - id of the desired layer
+     * @returns {?Object} a layer, if one with the given `id` exists
      * @private
      */
     getLayer: function(id) {
@@ -358,6 +385,14 @@ Style.prototype = util.inherit(Evented, {
     },
 
     featuresAt: function(coord, params, callback) {
+        this._queryFeatures('featuresAt', coord, params, callback);
+    },
+
+    featuresIn: function(bbox, params, callback) {
+        this._queryFeatures('featuresIn', bbox, params, callback);
+    },
+
+    _queryFeatures: function(queryType, bboxOrCoords, params, callback) {
         var features = [];
         var error = null;
 
@@ -365,9 +400,9 @@ Style.prototype = util.inherit(Evented, {
             params.layerIds = Array.isArray(params.layer) ? params.layer : [params.layer];
         }
 
-        util.asyncEach(Object.keys(this.sources), function(id, callback) {
+        util.asyncAll(Object.keys(this.sources), function(id, callback) {
             var source = this.sources[id];
-            source.featuresAt(coord, params, function(err, result) {
+            source[queryType](bboxOrCoords, params, function(err, result) {
                 if (result) features = features.concat(result);
                 if (err) error = err;
                 callback();
@@ -380,36 +415,7 @@ Style.prototype = util.inherit(Evented, {
                     return this._layers[feature.layer] !== undefined;
                 }.bind(this))
                 .map(function(feature) {
-                    feature.layer = this._layers[feature.layer].json();
-                    return feature;
-                }.bind(this)));
-        }.bind(this));
-    },
-
-    featuresIn: function(bbox, params, callback) {
-        var features = [];
-        var error = null;
-
-        if (params.layer) {
-            params.layer = { id: params.layer };
-        }
-
-        util.asyncEach(Object.keys(this.sources), function(id, callback) {
-            var source = this.sources[id];
-            source.featuresIn(bbox, params, function(err, result) {
-                if (result) features = features.concat(result);
-                if (err) error = err;
-                callback();
-            });
-        }.bind(this), function() {
-            if (error) return callback(error);
-
-            callback(null, features
-                .filter(function(feature) {
-                    return this._layers[feature.layer] !== undefined;
-                }.bind(this))
-                .map(function(feature) {
-                    feature.layer = this._layers[feature.layer].json();
+                    feature.layer = this._layers[feature.layer].serialize();
                     return feature;
                 }.bind(this)));
         }.bind(this));
@@ -471,6 +477,22 @@ Style.prototype = util.inherit(Evented, {
     },
 
     'get glyphs': function(params, callback) {
-        this.glyphSource.getSimpleGlyphs(params.fontstack, params.codepoints, params.uid, callback);
+        var stacks = params.stacks,
+            remaining = Object.keys(stacks).length,
+            allGlyphs = {};
+
+        for (var fontName in stacks) {
+            this.glyphSource.getSimpleGlyphs(fontName, stacks[fontName], params.uid, done);
+        }
+
+        function done(err, glyphs, fontName) {
+            if (err) console.error(err);
+
+            allGlyphs[fontName] = glyphs;
+            remaining--;
+
+            if (remaining === 0)
+                callback(null, allGlyphs);
+        }
     }
 });

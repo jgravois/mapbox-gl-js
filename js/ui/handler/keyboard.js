@@ -4,7 +4,8 @@ module.exports = Keyboard;
 
 
 var panDelta = 80,
-    rotateDelta = 2;
+    rotateDelta = 2,
+    pitchDelta = 5;
 
 /**
  * The `Keyboard` handler responds to keyboard input by zooming, rotating, or panning the
@@ -16,6 +17,8 @@ var panDelta = 80,
  *  * Arrow keys: pan by 80 pixels
  *  * `Shift+⇢`: increase rotation by 2 degrees
  *  * `Shift+⇠`: decrease rotation by 2 degrees
+ *  * `Shift+⇡`: increase pitch by 5 degrees
+ *  * `Shift+⇣`: decrease pitch by 5 degrees
  * @class Keyboard
  * @example
  *   // Disable the keyboard handler
@@ -43,44 +46,53 @@ Keyboard.prototype = {
     _onKeyDown: function (e) {
         if (e.altKey || e.ctrlKey || e.metaKey) return;
 
-        var map = this._map;
+        var map = this._map,
+            eventData = { originalEvent: e };
 
         switch (e.keyCode) {
         case 61:
         case 107:
         case 171:
         case 187:
-            map.zoomTo(Math.round(map.getZoom()) + (e.shiftKey ? 2 : 1));
+            map.zoomTo(Math.round(map.getZoom()) + (e.shiftKey ? 2 : 1), eventData);
             break;
 
         case 189:
         case 109:
         case 173:
-            map.zoomTo(Math.round(map.getZoom()) - (e.shiftKey ? 2 : 1));
+            map.zoomTo(Math.round(map.getZoom()) - (e.shiftKey ? 2 : 1), eventData);
             break;
 
         case 37:
             if (e.shiftKey) {
-                map.setBearing(map.getBearing() - rotateDelta);
+                map.easeTo({ bearing: map.getBearing() - rotateDelta }, eventData);
             } else {
-                map.panBy([-panDelta, 0]);
+                map.panBy([-panDelta, 0], eventData);
             }
             break;
 
         case 39:
             if (e.shiftKey) {
-                map.setBearing(map.getBearing() + rotateDelta);
+                map.easeTo({ bearing: map.getBearing() + rotateDelta }, eventData);
             } else {
-                map.panBy([panDelta, 0]);
+                map.panBy([panDelta, 0], eventData);
             }
             break;
 
         case 38:
-            map.panBy([0, -panDelta]);
+            if (e.shiftKey) {
+                map.easeTo({ pitch: map.getPitch() + pitchDelta }, eventData);
+            } else {
+                map.panBy([0, -panDelta], eventData);
+            }
             break;
 
         case 40:
-            map.panBy([0, panDelta]);
+            if (e.shiftKey) {
+                map.easeTo({ pitch: Math.max(map.getPitch() - pitchDelta, 0) }, eventData);
+            } else {
+                map.panBy([0, panDelta], eventData);
+            }
             break;
         }
     }

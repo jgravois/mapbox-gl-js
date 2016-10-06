@@ -4,14 +4,20 @@ var util = require('../util/util');
 var ajax = require('../util/ajax');
 var browser = require('../util/browser');
 var TilePyramid = require('./tile_pyramid');
-var TileCoord = require('./tile_coord');
 var normalizeURL = require('../util/mapbox').normalizeSourceURL;
+var TileCoord = require('./tile_coord');
 
 exports._loadTileJSON = function(options) {
 
+<<<<<<< HEAD
     var buildPyramid = function (index) {
         this._pyramid = new TilePyramid({
             index: index,
+=======
+    var buildPyramid = function (err, index) {
+        this._pyramid = new TilePyramid({
+            index: index.index,
+>>>>>>> v0.13.0-indexed
             tileSize: this.tileSize,
             cacheSize: 20,
             minzoom: this.minzoom,
@@ -36,6 +42,11 @@ exports._loadTileJSON = function(options) {
         util.extend(this, util.pick(tileJSON,
             ['tiles', 'minzoom', 'maxzoom', 'attribution']));
 
+        if (tileJSON.vector_layers) {
+            this.vectorLayers = tileJSON.vector_layers;
+            this.vectorLayerIds = this.vectorLayers.map(function(layer) { return layer.id; });
+        }
+
         // if index is defined, fetch the index json, then extend the pyramid
         if (tileJSON.index) {
             ajax.getJSON(normalizeURL(tileJSON.index), function (err, index) {
@@ -44,12 +55,13 @@ exports._loadTileJSON = function(options) {
                   return;
                 }
 
-                buildPyramid(index.index);
+                buildPyramid(null, index.index);
+
                 this.fire('load');
 
             }.bind(this));
         } else {
-            buildPyramid();
+            buildPyramid(null, {});
             this.fire('load');
         }
 
@@ -62,10 +74,23 @@ exports._loadTileJSON = function(options) {
     }
 };
 
-exports._renderTiles = function(layers, painter) {
-    if (!this._pyramid)
+exports.redoPlacement = function() {
+    if (!this._pyramid) {
         return;
+    }
 
+    var ids = this._pyramid.orderedIDs();
+    for (var i = 0; i < ids.length; i++) {
+        var tile = this._pyramid.getTile(ids[i]);
+        this._redoTilePlacement(tile);
+    }
+};
+
+exports._getTile = function(coord) {
+    return this._pyramid.getTile(coord.id);
+};
+
+exports._renderTiles = function(layers, painter) {
     var ids = this._pyramid.renderedIDs();
     for (var i = 0; i < ids.length; i++) {
         var tile = this._pyramid.getTile(ids[i]),
@@ -90,6 +115,11 @@ exports._renderTiles = function(layers, painter) {
 
         painter.drawTile(tile, layers);
     }
+};
+
+exports._getVisibleCoordinates = function() {
+    if (!this._pyramid) return [];
+    else return this._pyramid.renderedIDs().map(TileCoord.fromID);
 };
 
 exports._vectorFeaturesAt = function(coord, params, callback) {

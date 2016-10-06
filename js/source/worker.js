@@ -6,6 +6,7 @@ var util = require('../util/util');
 var ajax = require('../util/ajax');
 var vt = require('vector-tile');
 var Protobuf = require('pbf');
+var supercluster = require('supercluster');
 var TileCoord = require('./tile_coord');
 
 var geojsonvt = require('geojson-vt');
@@ -113,7 +114,16 @@ util.extend(Worker.prototype, {
     'parse geojson': function(params, callback) {
         var indexData = function(err, data) {
             if (err) return callback(err);
-            this.geoJSONIndexes[params.source] = geojsonvt(data, params.geojsonVtOptions);
+            if (typeof data != 'object') {
+                return callback(new Error("Input data is not a valid GeoJSON object."));
+            }
+            try {
+                this.geoJSONIndexes[params.source] = params.cluster ?
+                    supercluster(params.superclusterOptions).load(data.features) :
+                    geojsonvt(data, params.geojsonVtOptions);
+            } catch (err) {
+                return callback(err);
+            }
             callback(null);
         }.bind(this);
 
@@ -132,6 +142,8 @@ util.extend(Worker.prototype, {
     'load geojson tile': function(params, callback) {
         var source = params.source,
             coord = params.coord;
+
+        if (!this.geoJSONIndexes[source]) return callback(null, null); // we couldn't load the file
 
         // console.time('tile ' + coord.z + ' ' + coord.x + ' ' + coord.y);
 
