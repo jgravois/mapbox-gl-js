@@ -9,9 +9,9 @@ var TileCoord = require('./tile_coord');
 
 exports._loadTileJSON = function(options) {
 
-    var buildPyramid = function (index) {
+    var buildPyramid = function (err, index) {
         this._pyramid = new TilePyramid({
-            index: index,
+            index: index.index,
             tileSize: this.tileSize,
             cacheSize: 20,
             minzoom: this.minzoom,
@@ -49,33 +49,15 @@ exports._loadTileJSON = function(options) {
                   return;
                 }
 
-                buildPyramid(index.index);
+                buildPyramid(null, index.index);
                 this.fire('load');
 
             }.bind(this));
         } else {
-            buildPyramid();
+            buildPyramid(null, {});
             this.fire('load');
         }
 
-    }.bind(this);
-
-    var buildPyramid = function (err, index) {
-        this._pyramid = new TilePyramid({
-            index: index.index,
-            tileSize: this.tileSize,
-            cacheSize: 20,
-            minzoom: this.minzoom,
-            maxzoom: this.maxzoom,
-            roundZoom: this.roundZoom,
-            reparseOverscaled: this.reparseOverscaled,
-            load: this._loadTile.bind(this),
-            abort: this._abortTile.bind(this),
-            unload: this._unloadTile.bind(this),
-            add: this._addTile.bind(this),
-            remove: this._removeTile.bind(this),
-            redoPlacement: this._redoTilePlacement ? this._redoTilePlacement.bind(this) : undefined
-        });
     }.bind(this);
 
     if (options.url) {

@@ -64,7 +64,13 @@ LineBucket.prototype.addFeatures = function() {
 };
 
 LineBucket.prototype.addFeature = function(feature) {
-    var lines = feature.loadGeometry();
+    var lines;
+    if (feature.loadGeometry) {
+        lines = feature.loadGeometry();
+    } else {
+        lines = feature;
+    }
+    // var lines = feature.loadGeometry();
     for (var i = 0; i < lines.length; i++) {
         this.addLine(
             lines[i],

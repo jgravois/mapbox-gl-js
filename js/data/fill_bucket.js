@@ -41,7 +41,13 @@ FillBucket.prototype.addFeatures = function() {
 };
 
 FillBucket.prototype.addFeature = function(feature) {
-    var lines = feature.loadGeometry();
+    var lines;
+    if (feature.loadGeometry) {
+        lines = feature.loadGeometry();
+    } else {
+        lines = feature;
+    }
+    // var lines = feature.loadGeometry();
     for (var i = 0; i < lines.length; i++) {
         this.addFill(lines[i]);
     }
