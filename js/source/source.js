@@ -9,15 +9,9 @@ var TileCoord = require('./tile_coord');
 
 exports._loadTileJSON = function(options) {
 
-<<<<<<< HEAD
     var buildPyramid = function (index) {
         this._pyramid = new TilePyramid({
-            index: index,
-=======
-    var buildPyramid = function (err, index) {
-        this._pyramid = new TilePyramid({
             index: index.index,
->>>>>>> v0.13.0-indexed
             tileSize: this.tileSize,
             cacheSize: 20,
             minzoom: this.minzoom,
@@ -55,13 +49,13 @@ exports._loadTileJSON = function(options) {
                   return;
                 }
 
-                buildPyramid(null, index.index);
+                buildPyramid(index.index);
 
                 this.fire('load');
 
             }.bind(this));
         } else {
-            buildPyramid(null, {});
+            buildPyramid({});
             this.fire('load');
         }
 
