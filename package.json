@@ -45,7 +45,8 @@
     "st": "^1.0.0",
     "through": "^2.3.7",
     "gl": "^2.1.5",
-    "watchify": "^3.2.2"
+    "watchify": "^3.2.2",
+    "ansi-codes": "azer/ansi-codes"
   },
   "browserify": {
     "transform": [

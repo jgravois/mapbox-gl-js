@@ -308,7 +308,7 @@ TilePyramid.prototype = {
 
             // esri/chelm
             if (this.index) {
-              tile.parentId = this.indexSearch(coord.id);
+                tile.parentId = this.indexSearch(coord.id);
             }
             this._load(tile);
         }
