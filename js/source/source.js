@@ -45,8 +45,8 @@ exports._loadTileJSON = function(options) {
         if (tileJSON.index) {
             ajax.getJSON(normalizeURL(tileJSON.index), function (err, index) {
                 if (err) {
-                  this.fire('error', {error: err});
-                  return;
+                    this.fire('error', {error: err});
+                    return;
                 }
 
                 buildPyramid(index.index);
