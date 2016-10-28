@@ -2,8 +2,7 @@
 
 var FeatureTree = require('../data/feature_tree');
 var CollisionTile = require('../symbol/collision_tile');
-var BufferSet = require('../data/buffer/buffer_set');
-var createBucket = require('../data/create_bucket');
+var Bucket = require('../data/bucket');
 
 module.exports = WorkerTile;
 
@@ -11,15 +10,12 @@ function WorkerTile(params) {
     this.coord = params.coord;
     this.uid = params.uid;
     this.zoom = params.zoom;
-    this.maxZoom = params.maxZoom;
     this.tileSize = params.tileSize;
     this.source = params.source;
     this.overscaling = params.overscaling;
     this.angle = params.angle;
     this.pitch = params.pitch;
     this.collisionDebug = params.collisionDebug;
-
-    this.stacks = {};
 }
 
 WorkerTile.prototype.parse = function(data, layers, actor, callback, dz, xPos, yPos) {
@@ -28,187 +24,172 @@ WorkerTile.prototype.parse = function(data, layers, actor, callback, dz, xPos, y
 
     this.featureTree = new FeatureTree(this.coord, this.overscaling);
 
-    var i, k,
-        tile = this,
-        layer,
-        bucket,
-        buffers = new BufferSet(),
-        collisionTile = new CollisionTile(this.angle, this.pitch),
-        buckets = {},
-        bucketsInOrder = this.bucketsInOrder = [],
-        bucketsBySourceLayer = {};
+    var stats = { _total: 0 };
+
+    var tile = this,
+        buffers = {},
+        bucketsById = {},
+        bucketsBySourceLayer = {},
+        i, layer, sourceLayerId, bucket;
+
+    var extent = this.extent = getExtent(data.layers);
 
     // Map non-ref layers to buckets.
     for (i = 0; i < layers.length; i++) {
         layer = layers[i];
 
-        if (layer.source !== this.source)
-            continue;
+        if (layer.source !== this.source) continue;
+        if (layer.ref) continue;
+        if (layer.minzoom && this.zoom < layer.minzoom) continue;
+        if (layer.maxzoom && this.zoom >= layer.maxzoom) continue;
+        if (layer.layout && layer.layout.visibility === 'none') continue;
 
-        if (layer.ref)
-            continue;
+        bucket = Bucket.create({
+            layer: layer,
+            buffers: buffers,
+            zoom: this.zoom,
+            overscaling: this.overscaling,
+            collisionDebug: this.collisionDebug,
+            tileExtent: extent
+        });
 
-        var minzoom = layer.minzoom;
-        if (minzoom && this.zoom < minzoom && minzoom < this.maxZoom)
-            continue;
+        bucketsById[layer.id] = bucket;
 
-        var maxzoom = layer.maxzoom;
-        if (maxzoom && this.zoom >= maxzoom)
-            continue;
-
-        var visibility = layer.layout.visibility;
-        if (visibility === 'none')
-            continue;
-
-        bucket = createBucket(layer, buffers, this.zoom, this.overscaling, this.collisionDebug);
-        bucket.layers = [layer.id];
-
-        buckets[bucket.id] = bucket;
-        bucketsInOrder.push(bucket);
-
-        if (data.layers) {
-            // vectortile
-            var sourceLayer = layer['source-layer'];
-            if (!bucketsBySourceLayer[sourceLayer])
-                bucketsBySourceLayer[sourceLayer] = {};
-            bucketsBySourceLayer[sourceLayer][bucket.id] = bucket;
-        } else {
-            // geojson tile
-            bucketsBySourceLayer[bucket.id] = bucket;
+        if (data.layers) { // vectortile
+            sourceLayerId = layer['source-layer'];
+            bucketsBySourceLayer[sourceLayerId] = bucketsBySourceLayer[sourceLayerId] || {};
+            bucketsBySourceLayer[sourceLayerId][layer.id] = bucket;
         }
     }
 
     // Index ref layers.
     for (i = 0; i < layers.length; i++) {
         layer = layers[i];
-
-        if (layer.source !== this.source)
-            continue;
-
-        if (!layer.ref)
-            continue;
-
-        bucket = buckets[layer.ref];
-        if (!bucket)
-            continue;
-
-        bucket.layers.push(layer.id);
+        if (layer.source === this.source && layer.ref && bucketsById[layer.ref]) {
+            bucketsById[layer.ref].layers.push(layer.id);
+        }
     }
 
-    var extent = 4096;
-
     // read each layer, and sort its features into buckets
-    if (data.layers) {
-        // vectortile
-        for (k in bucketsBySourceLayer) {
-            layer = data.layers[k];
+    if (data.layers) { // vectortile
+        for (sourceLayerId in bucketsBySourceLayer) {
+            layer = data.layers[sourceLayerId];
+            if (layer) {
+
+                sortLayerIntoBuckets(layer, bucketsBySourceLayer[sourceLayerId], dz, xPos, yPos);
+            }
             if (!layer) continue;
-            if (layer.extent) extent = layer.extent;
-            sortLayerIntoBuckets(layer, bucketsBySourceLayer[k], dz, xPos, yPos);
         }
-    } else {
-        // geojson
-        sortLayerIntoBuckets(data, bucketsBySourceLayer);
+    } else { // geojson
+        sortLayerIntoBuckets(data, bucketsById);
     }
 
     function sortLayerIntoBuckets(layer, buckets, dz, xPos, yPos) {
         for (var i = 0; i < layer.length; i++) {
-          var feature = layer.feature(i);
+            var feature = layer.feature(i);
 
             // propagate clipped position in tile at the feature level
             feature.dz = dz;
             feature.xPos = xPos;
             feature.yPos = yPos;
 
-            for (var key in buckets) {
-                var bucket = buckets[key];
-                if (bucket.filter(feature)) {
-                    bucket.features.push(feature);
-                }
+            for (var id in buckets) {
+                if (buckets[id].filter(feature))
+                    buckets[id].features.push(feature);
             }
         }
     }
 
-    var prevPlacementBucket;
-    var remaining = bucketsInOrder.length;
+    var buckets = [],
+        symbolBuckets = this.symbolBuckets = [],
+        otherBuckets = [];
 
-    /*
-     *  The async parsing here is a bit tricky.
-     *  Some buckets depend on resources that may need to be loaded async (glyphs).
-     *  Some buckets need to be parsed in order (to get collision priorities right).
-     *
-     *  Dependencies calls are initiated first to get those rolling.
-     *  Buckets that don't need to be parsed in order, aren't to save time.
-     */
+    var collisionTile = new CollisionTile(this.angle, this.pitch, extent);
 
-    for (i = bucketsInOrder.length - 1; i >= 0; i--) {
-        bucket = bucketsInOrder[i];
+    for (var id in bucketsById) {
+        bucket = bucketsById[id];
+        if (bucket.features.length === 0) continue;
 
-        // Link buckets that need to be parsed in order
-        if (bucket.needsPlacement) {
-            if (prevPlacementBucket) {
-                prevPlacementBucket.next = bucket;
-            } else {
-                bucket.previousPlaced = true;
-            }
-            prevPlacementBucket = bucket;
+        buckets.push(bucket);
+
+        if (bucket.type === 'symbol')
+            symbolBuckets.push(bucket);
+        else
+            otherBuckets.push(bucket);
+    }
+
+    var icons = {},
+        stacks = {};
+
+    if (symbolBuckets.length > 0) {
+
+        // Get dependencies for symbol buckets
+        for (i = symbolBuckets.length - 1; i >= 0; i--) {
+            symbolBuckets[i].updateIcons(icons);
+            symbolBuckets[i].updateFont(stacks);
         }
 
-        if (bucket.getDependencies) {
-            bucket.getDependencies(this, actor, dependenciesDone(bucket));
+        for (var fontName in stacks) {
+            stacks[fontName] = Object.keys(stacks[fontName]).map(Number);
         }
+        icons = Object.keys(icons);
 
-        // immediately parse buckets where order doesn't matter and no dependencies
-        if (!bucket.needsPlacement && !bucket.getDependencies) {
-            parseBucket(tile, bucket);
+        var deps = 0;
+
+        actor.send('get glyphs', {uid: this.uid, stacks: stacks}, function(err, newStacks) {
+            stacks = newStacks;
+            gotDependency(err);
+        });
+
+        if (icons.length) {
+            actor.send('get icons', {icons: icons}, function(err, newIcons) {
+                icons = newIcons;
+                gotDependency(err);
+            });
+        } else {
+            gotDependency();
         }
     }
 
-    function dependenciesDone(bucket) {
-        return function(err) {
-            bucket.dependenciesLoaded = true;
-            parseBucket(tile, bucket, err);
-        };
+    // immediately parse non-symbol buckets (they have no dependencies)
+    for (i = otherBuckets.length - 1; i >= 0; i--) {
+        parseBucket(this, otherBuckets[i]);
     }
 
-    function parseBucket(tile, bucket, skip) {
-        if (bucket.getDependencies && !bucket.dependenciesLoaded) return;
-        if (bucket.needsPlacement && !bucket.previousPlaced) return;
+    if (symbolBuckets.length === 0)
+        return done();
 
-        if (!skip) {
-            var now = Date.now();
-            if (bucket.features.length) bucket.addFeatures(collisionTile);
-            var time = Date.now() - now;
-            if (bucket.interactive) {
-                for (var i = 0; i < bucket.features.length; i++) {
-                    var feature = bucket.features[i];
-                    tile.featureTree.insert(feature.bbox(), bucket.layers, feature);
-                }
+    function gotDependency(err) {
+        if (err) return callback(err);
+        deps++;
+        if (deps === 2) {
+            // all symbol bucket dependencies fetched; parse them in proper order
+            for (var i = symbolBuckets.length - 1; i >= 0; i--) {
+                parseBucket(tile, symbolBuckets[i]);
             }
-            if (typeof self !== 'undefined') {
-                self.bucketStats = self.bucketStats || {_total: 0};
-                self.bucketStats._total += time;
-                self.bucketStats[bucket.id] = (self.bucketStats[bucket.id] || 0) + time;
-            }
-            bucket.features = null;
-        }
-
-        remaining--;
-
-        if (!remaining) {
             done();
-            return;
+        }
+    }
+
+    function parseBucket(tile, bucket) {
+        var now = Date.now();
+        bucket.addFeatures(collisionTile, stacks, icons);
+        var time = Date.now() - now;
+
+        if (bucket.interactive) {
+            for (var i = 0; i < bucket.features.length; i++) {
+                var feature = bucket.features[i];
+                tile.featureTree.insert(feature.bbox(), bucket.layers, feature);
+            }
         }
 
-        // try parsing the next bucket, if it is ready
-        if (bucket.next) {
-            bucket.next.previousPlaced = true;
-            parseBucket(tile, bucket.next);
-        }
+        bucket.features = null;
+
+        stats._total += time;
+        stats[bucket.id] = (stats[bucket.id] || 0) + time;
     }
 
     function done() {
-
         tile.status = 'done';
 
         if (tile.redoPlacementAfterDone) {
@@ -216,25 +197,15 @@ WorkerTile.prototype.parse = function(data, layers, actor, callback, dz, xPos, y
             buffers.glyphVertex = result.buffers.glyphVertex;
             buffers.iconVertex = result.buffers.iconVertex;
             buffers.collisionBoxVertex = result.buffers.collisionBoxVertex;
-        }
-
-        var transferables = [],
-            elementGroups = {};
-
-        for (k in buffers) {
-            transferables.push(buffers[k].array);
-        }
-
-        for (k in buckets) {
-            elementGroups[k] = buckets[k].elementGroups;
+            tile.redoPlacementAfterDone = false;
         }
 
         callback(null, {
-            elementGroups: elementGroups,
+            elementGroups: getElementGroups(buckets),
             buffers: buffers,
             extent: extent,
-            bucketStats: typeof self !== 'undefined' ? self.bucketStats : null
-        }, transferables);
+            bucketStats: stats
+        }, getTransferables(buffers));
     }
 };
 
@@ -246,31 +217,49 @@ WorkerTile.prototype.redoPlacement = function(angle, pitch, collisionDebug) {
         return {};
     }
 
-    var buffers = new BufferSet();
-    var transferables = [];
-    var elementGroups = {};
-    var collisionTile = new CollisionTile(angle, pitch);
+    var buffers = {},
+        collisionTile = new CollisionTile(angle, pitch, this.extent);
 
-    var bucketsInOrder = this.bucketsInOrder;
-    for (var i = bucketsInOrder.length - 1; i >= 0; i--) {
-        var bucket = bucketsInOrder[i];
-
-        if (bucket.type === 'symbol') {
-            bucket.placeFeatures(collisionTile, buffers, collisionDebug);
-            elementGroups[bucket.id] = bucket.elementGroups;
-        }
-    }
-
-    for (var k in buffers) {
-        transferables.push(buffers[k].array);
+    for (var i = this.symbolBuckets.length - 1; i >= 0; i--) {
+        this.symbolBuckets[i].placeFeatures(collisionTile, buffers, collisionDebug);
     }
 
     return {
         result: {
-            elementGroups: elementGroups,
+            elementGroups: getElementGroups(this.symbolBuckets),
             buffers: buffers
         },
-        transferables: transferables
+        transferables: getTransferables(buffers)
     };
-
 };
+
+function getElementGroups(buckets) {
+    var elementGroups = {};
+
+    for (var i = 0; i < buckets.length; i++) {
+        elementGroups[buckets[i].id] = buckets[i].elementGroups;
+    }
+    return elementGroups;
+}
+
+function getTransferables(buffers) {
+    var transferables = [];
+
+    for (var k in buffers) {
+        transferables.push(buffers[k].arrayBuffer);
+
+        // The Buffer::push method is generated with "new Function(...)" and not transferrable.
+        buffers[k].push = null;
+    }
+    return transferables;
+}
+
+function getExtent(layers) {
+    var extent = 4096;
+    if (!layers) return extent;
+    for (var key in layers) {
+        var layer = layers[key];
+        if (layer && layer.extent) extent = layer.extent;
+    }
+    return extent;
+}
